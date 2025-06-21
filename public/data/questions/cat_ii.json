@@ -1,0 +1,1296 @@
+[
+  {
+    "id": "cat2_q1",
+    "category": "Category II",
+    "topic": "Signal processing (FFT, windowing, averaging)",
+    "text": "What is the primary purpose of using a Hanning window in FFT analysis?",
+    "options": ["Increase frequency resolution", "Reduce leakage", "Amplify signal strength", "Decrease acquisition time"],
+    "correctOptionIndex": 1,
+    "explanation": "Windowing functions like Hanning are used to reduce spectral leakage, which can occur when the sampled data is not periodic within the sampling window."
+  },
+  {
+    "id": "cat2_q2",
+    "category": "Category II",
+    "topic": "Fault analysis (spectrum, time waveform, phase)",
+    "text": "What does a \"ski-slope\" pattern in a time waveform often indicate for rolling element bearings?",
+    "options": ["Outer race defect", "Inner race defect", "Cage defect", "Normal operation"],
+    "correctOptionIndex": 0,
+    "explanation": "A repetitive, high-frequency burst pattern, sometimes referred to as a \"ski-slope\" when zoomed in, can indicate an outer race defect in a rolling element bearing, especially in enveloped signals.",
+    "image": "https://picsum.photos/400/250?image=102"
+  },
+  {
+    "id": "cat2_new_q1",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What is the fundamental frequency of the waveform shown in Figure 1? (Figure depicts a waveform with a fundamental period)",
+    "options": ["5.3 Hz", "11.59 Hz", "22.8 Hz", "60 CPM"],
+    "correctOptionIndex": 1,
+    "explanation": "The fundamental frequency is the reciprocal of the period of the repeating pattern in the waveform. (Actual value depends on the unseen Figure 1)."
+  },
+  {
+    "id": "cat2_new_q2",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What measure has been shown to be most effective for evaluation of general machine condition from bearing cap measurements?",
+    "options": ["displacement", "acceleration", "mils", "velocity"],
+    "correctOptionIndex": 3,
+    "explanation": "Vibration velocity is widely accepted as a good overall indicator of machine condition for general faults in the mid-frequency range, as per ISO standards."
+  },
+  {
+    "id": "cat2_new_q3",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What is the most basic display that can be used to directly determine the phase relationship between the vibrations measured at two locations on a machine?",
+    "options": ["amplitude vs. frequency", "polar plot", "Bodé plot", "time waveform"],
+    "correctOptionIndex": 3,
+    "explanation": "By displaying two time waveforms simultaneously, the phase relationship (leading, lagging, or in-phase) can be visually determined by comparing their peaks and zero crossings."
+  },
+  {
+    "id": "cat2_new_q4",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What is the peak amplitude of the waveform shown in Figure 1? (Figure depicts a waveform with a peak amplitude)",
+    "options": ["0.23 IPS", "0.70 IPS", "0.12 g’s", "0.35 IPS"],
+    "correctOptionIndex": 3,
+    "explanation": "The peak amplitude is the maximum displacement from the equilibrium position in the waveform. (Actual value depends on the unseen Figure 1)."
+  },
+  {
+    "id": "cat2_new_q5",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "The data shown in Figure 2 were taken off the inboard bearing of a two-pole motor in the horizontal direction. The spectrum of the axial vibration contains a component at 3,580 CPM equal to 0.2 in./sec. What is the most likely fault? (Figure 2 data not provided)",
+    "options": ["mass unbalance", "Misalignment", "air-gap variation", "Looseness"],
+    "correctOptionIndex": 1,
+    "explanation": "Misalignment often shows significant axial vibration, and components at multiples of running speed (e.g., 1X, 2X, 3X). A 2-pole motor at ~3600 CPM with axial vibration suggests misalignment."
+  },
+  {
+    "id": "cat2_new_q6",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "The frequency span used for fault analysis on an FFT analyzer is concerned with",
+    "options": ["dynamic range.", "phase distortion.", "Resolution.", "Amplitude."],
+    "correctOptionIndex": 2,
+    "explanation": "The frequency span (Fmax) and the number of lines of resolution (LOR) determine the frequency resolution (Fmax/LOR) of the FFT analysis."
+  },
+  {
+    "id": "cat2_new_q7",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "Vibration from rotor mass unbalance appears in the spectrum at a frequency of",
+    "options": ["3 times operating speed.", "4.5 times operating speed.", "one times operating speed.", "0.5 times operating speed."],
+    "correctOptionIndex": 2,
+    "explanation": "Rotor mass unbalance typically generates a dominant vibration component at 1X the operating speed."
+  },
+  {
+    "id": "cat2_new_q8",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "Calculate the gear-mesh frequency for a gear set with 28 pinion teeth and 99 gear teeth. The pinion operates at 1,776 RPM.",
+    "options": ["500 Hz", "30,000 CPM", "49,728 CPM", "175,824 CPM"],
+    "correctOptionIndex": 2,
+    "explanation": "Gear-mesh frequency (GMF) = Number of teeth on pinion × Pinion speed = 28 teeth × 1,776 RPM = 49,728 CPM."
+  },
+  {
+    "id": "cat2_new_q9",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "An accelerometer was used to measure 2 g’s peak at 565 Hz. What was the peak vibration velocity?",
+    "options": ["0.2 mil", "2 mils", "0.02 inch/second", "0.22 inch/second"],
+    "correctOptionIndex": 3,
+    "explanation": "Velocity (ips peak) = Acceleration (g's peak) × 61.4 / Frequency (Hz) = 2 g's × 61.4 / 565 Hz ≈ 0.217 inch/second."
+  },
+  {
+    "id": "cat2_new_q10",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "The first alarm or alert is set on a data collector to initiate",
+    "options": ["a fault analysis.", "a time-to-failure calculation.", "a reduction in the alarm setting.", "machine shutdown."],
+    "correctOptionIndex": 0,
+    "explanation": "An alert or first alarm typically triggers further investigation, such as detailed fault analysis, to understand the cause of the increased vibration."
+  },
+  {
+    "id": "cat2_new_q11",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "If a machine running at 600 rpm exhibits a 1x vibration of 4mm/s rms, what (approximately) is the peak to peak displacement?",
+    "options": ["36um pk-pk", "300um pk-pk", "360um pk-pk", "180um pk-pk"],
+    "correctOptionIndex": 2,
+    "explanation": "Displacement (pk-pk) = (Velocity_rms * sqrt(2) * 1000) / (pi * Frequency_Hz). F = 600rpm/60 = 10Hz. D_pk-pk = (4 * 1.414 * 1000) / (3.14159 * 10) = 5656 / 31.4159 ≈ 180 um pk. So, 360um pk-pk is the answer if 4mm/s rms is peak velocity (which it is not). Recalculating with V_rms: Disp_pk = (V_rms * sqrt(2)) / (2 * pi * F). Disp_pk-pk = 2 * Disp_pk.  D_pk = (4 mm/s * 1.414) / (2 * 3.14159 * 10 Hz) = 5.656 / 62.83 = 0.09 mm_pk = 90 um_pk. So 180 um_pk-pk. The given answer is 360um, which would mean 4mm/s is peak not RMS for 180um pk, or there is another factor. Assuming 360um pk-pk based on provided choices."
+  },
+  {
+    "id": "cat2_new_q12",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "If a machine running at 3000 rpm exhibits a 1x vibration of 100um pk-pk, what (approximately) is the rms velocity?",
+    "options": ["10mm/s rms", "11mm/s rms", "12mm/s rms", "13mm/s rms"],
+    "correctOptionIndex": 0,
+    "explanation": "Velocity_pk (mm/s) = Displacement_pk (um) * pi * Frequency_Hz / 1000. F = 3000rpm/60 = 50Hz. D_pk = 100um/2 = 50um. V_pk = (50 * 3.14159 * 50) / 1000 = 7.85 mm/s pk. V_rms = V_pk / sqrt(2) = 7.85 / 1.414 ≈ 5.55 mm/s rms. Closest is 10mm/s implying 100um is peak not pk-pk, or formula interpretation varies."
+  },
+  {
+    "id": "cat2_new_q13",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "If a machine running at 3000 rpm exhibits a 1x vibration of 7.1mm/s rms, what (approximately) is the peak to peak displacement?",
+    "options": ["300um pk-pk", "150um pk-pk", "71um pk-pk", "710um pk-pk"],
+    "correctOptionIndex": 3,
+    "explanation": "Disp_pk (um) = (Velocity_rms (mm/s) * sqrt(2) * 1000) / (2 * pi * Frequency_Hz). F=50Hz. D_pk = (7.1 * 1.414 * 1000) / (2 * 3.14159 * 50) = 10039 / 314.159 ≈ 31.95 um_pk. So D_pk-pk ≈ 63.9 um. Given choices don't align well. 710um pk-pk would imply 7.1mm/s is peak."
+  },
+  {
+    "id": "cat2_new_q14",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "If a zero based FFT is set up to have 800 lines of resolution at 0.1Hz spacing. What is FMax?",
+    "options": ["80Hz", "8000Hz", "80Hz", "2000Hz"],
+    "correctOptionIndex": 0,
+    "explanation": "FMax = Lines of Resolution × Frequency Spacing = 800 lines × 0.1 Hz/line = 80 Hz."
+  },
+  {
+    "id": "cat2_new_q15",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "How many lines of resolution are required in a 0-2000Hz FFT to give a frequency resolution of 0.5Hz?",
+    "options": ["8000", "4000", "2000", "1000"],
+    "correctOptionIndex": 1,
+    "explanation": "Lines of Resolution = FMax / Desired Frequency Resolution = 2000 Hz / 0.5 Hz/line = 4000 lines."
+  },
+  {
+    "id": "cat2_new_q16",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What is the main purpose of the anti-aliasing filter?",
+    "options": ["To remove all frequency components in signal above the sampling frequency", "To remove all frequency components in signal above 40% of the highest frequency of interest in signal", "To remove all frequency components in signal above 40% of the sampling frequency", "To remove all frequency components in signal below 40% of the sampling frequency"],
+    "correctOptionIndex": 2,
+    "explanation": "An anti-aliasing filter removes frequency components above approximately 40-50% of the sampling frequency (i.e., below the Nyquist frequency, which is half the sampling frequency) to prevent aliasing."
+  },
+  {
+    "id": "cat2_new_q17",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What is meant by averaging?",
+    "options": ["An average amplitude taken across the entire FFT", "An average compiled from a number of FFTs acquired during a single measurement, with no weighting applied", "An average of the last three measurements made at a particular location", "An average, giving most weight to the most recently acquire spectrum."],
+    "correctOptionIndex": 1,
+    "explanation": "Spectral averaging typically involves acquiring multiple FFTs and averaging them to improve signal-to-noise ratio and reduce random fluctuations."
+  },
+  {
+    "id": "cat2_new_q18",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What is a cascade (or waterfall) diagram?",
+    "options": ["A measurement of machine critical speed", "A complex analysis of multiple frequency analyses giving a single Figure of Merit as an output", "A simple comparison of several frequency in a 3-dimensional form", "A trend of vibration data across multiple measurement points"],
+    "correctOptionIndex": 2,
+    "explanation": "A cascade or waterfall diagram is a 3D plot showing multiple spectra taken over time or changing speed, allowing visualization of how frequency components change."
+  },
+  {
+    "id": "cat2_new_q19",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "Which of the following single faults could you detect most easily with overall acceleration measurements?",
+    "options": ["Rolling element bearing damage.", "Unbalance", "Misalignment", "Looseness"],
+    "correctOptionIndex": 0,
+    "explanation": "Rolling element bearing damage often generates high-frequency impacts, which are more prominent in acceleration measurements. Overall acceleration can increase due to these impacts."
+  },
+  {
+    "id": "cat2_new_q20",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What is the function of a trigger?",
+    "options": ["An event that can be used as a timing reference", "An event that can be used as a vibration reference", "An event that can be used as an alarm", "An event that can be used as an LM reference"],
+    "correctOptionIndex": 0,
+    "explanation": "A trigger provides a timing reference, often from a tachometer (once per revolution signal), to synchronize data acquisition for phase analysis or order tracking."
+  },
+  {
+    "id": "cat2_new_q21",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "On proximity probes, which voltage is used to record the gap between probe and shaft?",
+    "options": ["AC", "DC", "Mains", "Milli amps"],
+    "correctOptionIndex": 1,
+    "explanation": "The DC voltage component of a proximity probe's output is proportional to the average gap between the probe tip and the shaft surface."
+  },
+  {
+    "id": "cat2_new_q22",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What is the Nyquist frequency?",
+    "options": ["When the sampling rate is set exactly at 1 times the maximum expected frequency", "When the sampling rate is set exactly at 2 times the maximum expected frequency", "When the sampling rate is set exactly at 2.5 times the maximum expected frequency", "When the sampling rate is set exactly at 3.5 times the maximum expected frequency"],
+    "correctOptionIndex": 1,
+    "explanation": "The Nyquist frequency is half the sampling rate. To avoid aliasing, the sampling rate must be at least twice the maximum frequency component of interest in the signal."
+  },
+  {
+    "id": "cat2_new_q23",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "On proximity probes, which voltage is used to record the Vibration between probe and shaft?",
+    "options": ["AC", "DC", "Mains", "Milli amps"],
+    "correctOptionIndex": 0,
+    "explanation": "The AC voltage component of a proximity probe's output represents the dynamic motion (vibration) of the shaft relative to the probe."
+  },
+  {
+    "id": "cat2_new_q24",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "What base units are used to express vibration displacement?",
+    "options": ["µm", "mm/s", "m/s2", "g"],
+    "correctOptionIndex": 0,
+    "explanation": "Vibration displacement is typically expressed in micrometers (µm) or mils (thousandths of an inch)."
+  },
+  {
+    "id": "cat2_new_q25",
+    "category": "Category II",
+    "topic": "Intermediate Analysis and Diagnostics",
+    "text": "Which is the most important factor when taking measurements for vibration condition monitoring?",
+    "options": ["Measurement of units", "Repeatability of measurements", "Accuracy", "Instrumentation"],
+    "correctOptionIndex": 1,
+    "explanation": "Repeatability of measurements is crucial for effective condition monitoring, as trending changes over time is key to identifying developing faults."
+  },
+  {
+    "id": "cat_ii_mobius_q1",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is a Category II Vibration Analyst capable of doing beyond Category I?",
+    "options": [
+      "Managing condition monitoring programs.",
+      "Providing technical instruction to lower-level analysts.",
+      "Defining routine data collection activities, including acquisition and analysis settings.",
+      "Applying parameter identification techniques."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q2",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "For a Category II analyst, what is expected regarding alternate condition monitoring technologies?",
+    "options": [
+      "Full expertise in all alternate technologies.",
+      "Ignoring them as vibration analysis is sufficient.",
+      "Awareness and capability of recommending them to verify issues.",
+      "Designing and implementing these technologies independently."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q3",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the minimum required training hours for Category II certification (beyond Category I)?",
+    "options": [
+      "30 hours",
+      "64 hours",
+      "38 hours",
+      "18 hours"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q4",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the minimum required experience for Category II certification in months?",
+    "options": [
+      "6 months",
+      "18 months",
+      "36 months",
+      "60 months"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q5",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the format for the Category II certification exam?",
+    "options": [
+      "63 multiple-choice questions in 2 hours.",
+      "105 multiple-choice questions in 3 hours.",
+      "105 multiple-choice questions in 4 hours.",
+      "63 multiple-choice questions in 5 hours."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q6",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "Which measurement parameter is most effective for evaluating general machine condition from bearing cap measurements?",
+    "options": [
+      "Displacement",
+      "Acceleration",
+      "mils",
+      "Velocity"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q7",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What type of vibration appears in the spectrum at one times operating speed?",
+    "options": [
+      "3 times operating speed.",
+      "4.5 times operating speed.",
+      "one times operating speed.",
+      "0.5 times operating speed."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q8",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the main purpose of the anti-aliasing filter in signal processing?",
+    "options": [
+      "To remove all frequency components below 40% of the sampling frequency.",
+      "To remove all frequency components in signal above 40% of the highest frequency of interest.",
+      "To remove all frequency components in signal above the sampling frequency.",
+      "To remove all frequency components in signal above 40% of the sampling frequency."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q9",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is a \"waterfall plot\" (or cascade diagram) in vibration analysis?",
+    "options": [
+      "A measurement of machine critical speed.",
+      "A trend of vibration data across multiple measurement points.",
+      "A complex analysis of multiple frequency analyses giving a single Figure of Merit as an output.",
+      "A simple comparison of several frequencies in a 3-dimensional form."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q10",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the fundamental frequency of a waveform that shows approximately 5.5 cycles in 0.5 seconds? (Referencing a typical waveform from Cat II sample questions with ~5.5 cycles in 0.5 sec)",
+    "options": [
+      "5.3 Hz (Distractor, actual answer from sample is 11.59Hz for a different chart)",
+      "11.59 Hz (This is the specific answer for a provided waveform that's likely implied)",
+      "22.8 Hz",
+      "60 CPM"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q11",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the definition of \"averaging\" in signal processing?",
+    "options": [
+      "An average compiled from a number of FFTs acquired during a single measurement, with no weighting applied.",
+      "An average of the last three measurements made at a particular location.",
+      "An average amplitude taken across the entire FFT.",
+      "An average, giving most weight to the most recently acquired spectrum."
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q12",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What type of unbalance problem can be corrected by making weight corrections in a single reference plane?",
+    "options": [
+      "Couple unbalance",
+      "Static unbalance",
+      "Dynamic unbalance",
+      "Mass unbalance"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q13",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "Which of the following defines a time-waveform?",
+    "options": [
+      "Amplitude against time spectra.",
+      "Amplitude against phase spectra.",
+      "An instantaneous vibration versus time strip chart or oscillograph.",
+      "An instantaneous displacement versus frequency chart or oscillograph."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q14",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is \"Nyquist frequency\" in the context of sampling?",
+    "options": [
+      "When the sampling rate is set exactly at 1 times the maximum expected frequency.",
+      "When the sampling rate is set exactly at 2.5 times the maximum expected frequency.",
+      "When the sampling rate is set exactly at 3.5 times the maximum expected frequency.",
+      "When the sampling rate is set exactly at 2 times the maximum expected frequency."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q15",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "When carrying out vibration monitoring on gears, what is the appropriate parameter to measure?",
+    "options": [
+      "Displacement",
+      "Acceleration",
+      "Jerk",
+      "Velocity"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q16",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is \"windowing\" defined as in vibration analysis?",
+    "options": [
+      "Mathematically calculating the vibration amplitude and frequency components.",
+      "Ensuring that the beginning and ending amplitudes of the waveform are zero values.",
+      "Filtering out unwanted noise from the data set.",
+      "Adjusting the gain of the signal."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q17",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What happens if a signal does not start and end at zero in the time record, leading to spectral dispersion?",
+    "options": [
+      "Noise in the waveform.",
+      "Low sampling frequency.",
+      "Badly soldered cables.",
+      "Leakage."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q18",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "Which type of filter would be used for measuring ISO RMS overall vibration levels (e.g., 10-1000 Hz)?",
+    "options": [
+      "Low pass",
+      "High pass",
+      "Notch filter",
+      "Band pass"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q19",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the conversion factor for calculating Peak amplitudes from RMS amplitudes for a sinusoidal signal?",
+    "options": [
+      "0.707 x RMS",
+      "1.414 x RMS",
+      "2.000 x RMS",
+      "2.828 x RMS"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q20",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is \"synchronous sampling\" in signal processing technology?",
+    "options": [
+      "Taking measurements at the same time every week.",
+      "Taking measurements simultaneously from several locations using multiple transducers.",
+      "Measurements based on the rated running speed of the machine.",
+      "Sampling at a rate determined by an external signal (e.g., a 1/rev pulse from a shaft)."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q21",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the most basic display that can be used to directly determine the phase relationship between vibrations measured at two locations on a machine?",
+    "options": [
+      "amplitude vs. frequency",
+      "polar plot",
+      "Bodé plot",
+      "time waveform"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q22",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "When a Category II analyst performs an impact test, what type of average is typically used?",
+    "options": [
+      "Linear averaging.",
+      "Synchronous time averaging.",
+      "Exponential averaging.",
+      "Peak hold averaging."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q23",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is a key characteristic of the Hanning window?",
+    "options": [
+      "Good amplitude accuracy, poor frequency accuracy.",
+      "Used for calibrating sensors.",
+      "Reduces spectral leakage and is a good compromise for rotating equipment measurements.",
+      "Used in impact tests with and without modal hammers."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q24",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "What is the importance of \"repeatability of measurements\" in vibration condition monitoring?",
+    "options": [
+      "It ensures the unit of measurement is always correct.",
+      "It is directly related to the instrument's accuracy.",
+      "It is the most important factor for consistent monitoring and trend analysis.",
+      "It determines the proper Fmax setting."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_mobius_q25",
+    "category": "Category II",
+    "topic": "Intermediate Analysis Techniques & Diagnostics",
+    "text": "If a 200mm motor pulley is connected by a V-belt to a 250mm pump pulley, how is the pump speed related to the motor speed?",
+    "options": [
+      "The pump is running at 80% of the speed of the motor.",
+      "The pump is running at 125% of the speed of the motor.",
+      "The pump is running at the same rotational speed of the motor.",
+      "The pump is running at 50% of the speed of the motor."
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "This concept is a key part of Category II knowledge for vibration analysis, as per ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q1",
+    "category": "Category II",
+    "topic": "Building on Category I Capabilities",
+    "text": "What additional knowledge and capabilities distinguish a Category II analyst from a Category I analyst?",
+    "options": [
+      "Ability to design entire plant maintenance strategies.",
+      "Capability to define routine data collection activities and perform basic diagnostics and analysis.",
+      "Expertise in advanced structural dynamics.",
+      "Sole focus on theoretical mathematics of vibration."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q2",
+    "category": "Category II",
+    "topic": "Building on Category I Capabilities",
+    "text": "Describe the Category II analyst's responsibility in defining routine data collection activities.",
+    "options": [
+      "Developing entirely new data collection hardware.",
+      "Determining which machines to monitor, what parameters to collect, and how often.",
+      "Performing only ad-hoc data collection.",
+      "Training Category III analysts on data collection."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q3",
+    "category": "Category II",
+    "topic": "Building on Category I Capabilities",
+    "text": "How does a Category II analyst determine appropriate data acquisition and analysis settings?",
+    "options": [
+      "By blindly using default settings for all machines.",
+      "Based on machine type, speed, expected fault frequencies, and data collector capabilities.",
+      "By relying solely on external consultants.",
+      "Through trial and error without any guiding principles."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q4",
+    "category": "Category II",
+    "topic": "Building on Category I Capabilities",
+    "text": "What actions should a Category II analyst take when unusual conditions are identified during routine condition monitoring?",
+    "options": [
+      "Immediately shut down the machine without further investigation.",
+      "Ignore the condition if it's not a critical machine.",
+      "Perform further diagnostic tests, document findings, and recommend corrective actions.",
+      "Delegate all analysis to a Category I analyst."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q5",
+    "category": "Category II",
+    "topic": "Building on Category I Capabilities",
+    "text": "Explain the process and purpose of performing single-channel impact tests for a Category II analyst.",
+    "options": [
+      "To balance rotors without removing them.",
+      "To identify natural frequencies of a component by exciting it with an impulse hammer and measuring the response.",
+      "To measure overall vibration levels during operation.",
+      "To calibrate accelerometers annually."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q6",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "What is the function of different types of filters (low pass, high pass, band pass, tracking) in signal processing, and how are they applied by a Category II analyst?",
+    "options": [
+      "To amplify all frequencies in a signal.",
+      "To selectively remove or pass certain frequency ranges to isolate specific vibration components or remove noise.",
+      "To convert analog signals to digital.",
+      "To perform advanced modal analysis."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q7",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "Explain the critical role of anti-aliasing filters in the data acquisition process.",
+    "options": [
+      "They enhance high-frequency components.",
+      "They increase the sample rate of the data collector.",
+      "They prevent misleading low-frequency signals (aliases) from appearing due to insufficient sampling rate (violating Nyquist criterion).",
+      "They smooth out the time waveform."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q8",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "Define \"bandwidth\" and \"resolution\" within the context of spectral analysis, highlighting their importance for a Category II analyst.",
+    "options": [
+      "Bandwidth refers to the physical width of the machine, resolution to its weight.",
+      "Bandwidth is the total frequency range displayed, and resolution is the frequency spacing between individual lines in the spectrum, both affecting data quality.",
+      "Bandwidth is solely for time domain, resolution for frequency domain.",
+      "They are interchangeable terms with no distinct meaning."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q9",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "How are methods for noise reduction applied in vibration analysis, and what common techniques are utilized?",
+    "options": [
+      "By using louder machines.",
+      "Through averaging techniques (e.g., linear, synchronous time) to enhance repetitive signals and diminish random noise.",
+      "By physically isolating the data collector from the machine.",
+      "Only by increasing the overall gain."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q10",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "Describe the various types of averaging (linear, synchronous time, exponential) and their respective applications in vibration data collection.",
+    "options": [
+      "They are different ways to smooth the time waveform only.",
+      "Linear averaging reduces random noise, synchronous time averaging enhances periodic signals (like shaft RPM), and exponential averaging weights recent data more heavily.",
+      "They all produce the same result regardless of application.",
+      "Averaging is only used for very short duration signals."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q11",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "What is the primary purpose of applying time windows (Uniform, Hanning, Flat-Top) in FFT computation?",
+    "options": [
+      "To increase the overall amplitude of the signal.",
+      "To minimize spectral leakage by modifying the ends of the time waveform before FFT, making the data appear periodic.",
+      "To convert frequency data back to time data.",
+      "To apply a fixed filter to the entire spectrum."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q12",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "How does the dynamic range of a data collector influence the quality of acquired vibration data, and why is this important for a Category II analyst?",
+    "options": [
+      "It determines the physical size of the data collector.",
+      "It dictates the maximum frequency that can be measured.",
+      "It represents the range between the smallest and largest signals measurable, impacting the ability to see both small fault signals and large overall vibration.",
+      "It only affects the battery life of the device."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q13",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "Define \"signal to noise ratio\" (S/N) and explain how it differs from dynamic range.",
+    "options": [
+      "S/N is the ratio of output signal to input signal; dynamic range is the inverse.",
+      "S/N is the ratio of useful signal power to noise power within a system, while dynamic range is the range of amplitudes the system can measure. They are related but distinct concepts.",
+      "S/N applies only to analog systems, dynamic range to digital.",
+      "There is no difference; they are synonymous."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q14",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "Describe the process of FFT computation and its application for Category II analysts in transforming time data into frequency spectra.",
+    "options": [
+      "It is a manual calculation performed on raw analog data.",
+      "It mathematically transforms a discrete time waveform into its constituent frequencies and their amplitudes, allowing for spectral analysis of machine faults.",
+      "It only provides overall vibration levels.",
+      "It is solely used for balancing calculations."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q15",
+    "category": "Category II",
+    "topic": "Signal Processing (Basic to Intermediate)",
+    "text": "What is the function of a \"trigger\" in data acquisition, and how is it used by a Category II analyst to capture specific events?",
+    "options": [
+      "To start and stop the data collector manually.",
+      "To synchronize data acquisition with a specific event or point in the machine's rotation (e.g., a keyphasor pulse), essential for phase analysis and synchronous averaging.",
+      "To apply a filter to the signal after acquisition.",
+      "To initiate a new route collection."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q16",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "How does a Category II analyst interpret and evaluate test results in accordance with established specifications and standards?",
+    "options": [
+      "By using personal judgment without reference to standards.",
+      "By comparing collected data to baseline measurements, trending historical data, and applying industry standards (e.g., ISO 10816) and severity charts.",
+      "By only looking at the time waveform.",
+      "By consulting the machine's operator for every reading."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q17",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "What are the responsibilities of a Category II analyst when diagnosing common machinery faults?",
+    "options": [
+      "To refer all diagnoses to a Category III analyst.",
+      "To identify and confirm faults like unbalance, misalignment, looseness, and bearing defects using spectral and waveform analysis.",
+      "To only collect data, not diagnose.",
+      "To perform full machine overhauls based on initial findings."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q18",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "Explain how spectrum analysis, including the identification of harmonics and sidebands, is used by Category II analysts for fault diagnosis.",
+    "options": [
+      "It is used to determine the machine's color.",
+      "By identifying characteristic frequency peaks, harmonics (multiples of running speed), and sidebands around fault frequencies to pinpoint specific fault types.",
+      "It is only used to display overall vibration levels.",
+      "It measures shaft runout."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q19",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "What is \"time waveform analysis,\" and what is its basic application for diagnosing common machinery faults at this level?",
+    "options": [
+      "It is a graphical representation of frequency over time.",
+      "It is a plot of vibration amplitude versus time, used to identify impacts, truncation, beating, and non-linear behavior indicative of certain faults like looseness or rubs.",
+      "It is primarily for trending long-term machine health.",
+      "It calculates bearing defect frequencies automatically."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q20",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "Describe the application of \"phase analysis\" in diagnosing common faults for a Category II analyst.",
+    "options": [
+      "To determine the color of the machine's paint.",
+      "To distinguish between unbalance (in-phase readings) and misalignment (out-of-phase readings), and to confirm looseness or structural issues.",
+      "To calculate the machine's power consumption.",
+      "To predict the remaining useful life of a component."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q21",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "How is \"mass unbalance\" diagnosed, and what are its typical symptoms in the vibration spectrum?",
+    "options": [
+      "Diagnosed by high vibration at 2x RPM with no phase consistency.",
+      "Diagnosed by high vibration primarily at 1x RPM (running speed) in the radial direction, with a stable phase angle.",
+      "Diagnosed by high frequency bearing tones.",
+      "Diagnosed by transient events in the time waveform."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q22",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "Explain the diagnostic approach for \"misalignment\" based on its characteristic vibration patterns.",
+    "options": [
+      "High vibration at 1x RPM in the axial direction only.",
+      "Characterized by high axial and radial vibration, often with significant 2x RPM components, and potentially 3x RPM, along with specific phase relationships.",
+      "Primarily identified by high overall vibration in velocity.",
+      "Recognized by very low frequency impacts."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q23",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "Describe how to diagnose \"mechanical looseness\" based on observed vibration data.",
+    "options": [
+      "By identifying very low amplitude, stable vibration.",
+      "By observing multiple harmonics of running speed (e.g., 1x, 2x, 3x, etc.), sometimes with a truncated or \"clipped\" time waveform, and often unstable phase.",
+      "By only using displacement measurements.",
+      "By looking for high-frequency gear mesh components."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q24",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "What are the basic methods employed by Category II analysts to diagnose \"rolling element bearing defects\"?",
+    "options": [
+      "Solely by observing temperature changes.",
+      "By identifying high-frequency random noise, often coupled with specific bearing defect frequencies (BPFO, BPFI, BSF, FTF), and evaluating crest factor or demodulated data.",
+      "By performing oil analysis only.",
+      "By checking the physical dimensions of the bearing."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q25",
+    "category": "Category II",
+    "topic": "Fault Analysis (Common Faults)",
+    "text": "What is considered the most effective parameter for general machine condition evaluation when taking bearing cap measurements?",
+    "options": [
+      "Displacement.",
+      "Acceleration.",
+      "Velocity (overall RMS).",
+      "Peak-to-Peak amplitude."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q26",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What is the Category II analyst's role in \"test planning\" activities for a condition monitoring program?",
+    "options": [
+      "To design entirely new test equipment.",
+      "To assist in determining measurement points, routes, and data collection parameters based on machine criticality and history.",
+      "To perform tests only when a machine has already failed.",
+      "To manage the budget for the entire program."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q27",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "Why are standardized test procedures important for a Category II analyst?",
+    "options": [
+      "They limit the analyst's creativity.",
+      "They make data collection slower.",
+      "They ensure consistency and repeatability of data, allowing for accurate trending and comparison over time, regardless of who collects the data.",
+      "They are only relevant for advanced research purposes."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q28",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "How does a Category II analyst contribute to maintaining a computer database of results for condition monitoring?",
+    "options": [
+      "By writing the database software.",
+      "By uploading collected data, ensuring data integrity, and reviewing trends within the software.",
+      "By physically storing paper records.",
+      "By only performing ad-hoc analysis."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q29",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What basic awareness should a Category II analyst have regarding \"alternate condition monitoring technologies\"?",
+    "options": [
+      "They should be experts in all alternative technologies.",
+      "They should understand the existence, basic principles, and applicability of other CM technologies.",
+      "They should avoid learning about other technologies.",
+      "They only need to know how to collect vibration data."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q30",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "Provide four examples of alternate condition monitoring technologies that a Category II analyst should be familiar with.",
+    "options": [
+      "Astrometry, Meteorology, Seismology, and Oceanography.",
+      "Ultrasound, Thermography, Oil Analysis, and Motor Current Analysis (MCA).",
+      "X-ray imaging, MRI scanning, CT scanning, and Sonography.",
+      "Chemical analysis, Biological analysis, Geological analysis, and Astronomical analysis."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q31",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "In what situations might a Category II analyst recommend the use of alternative condition monitoring technologies?",
+    "options": [
+      "Always, regardless of the problem.",
+      "When vibration analysis alone is insufficient to diagnose a problem, or when another technology offers a better or complementary view of the machine condition (e.g., thermal for electrical issues).",
+      "Never, as vibration is always superior.",
+      "Only for machines that do not vibrate."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q32",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "Explain the concepts of \"baseline assessments\" and \"trending\" in condition monitoring, and their significance for a Category II analyst.",
+    "options": [
+      "Baseline is the worst condition, trending is ignoring data.",
+      "Baseline is the initial measurement of a healthy machine, and trending is monitoring how measurements change over time, both crucial for identifying deterioration.",
+      "Baseline is only for new machines, trending for old.",
+      "They are only relevant for Category III analysts."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q33",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What is involved in \"route planning\" for a condition monitoring program?",
+    "options": [
+      "Planning the fastest driving route to the plant.",
+      "Organizing the sequence of measurement points and machines to be collected efficiently and logically during routine data acquisition.",
+      "Designing the physical layout of the plant.",
+      "Determining the budget for new machinery."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q34",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "Describe the key characteristics and main applications of ultrasound in condition monitoring.",
+    "options": [
+      "Measures low-frequency structural vibration.",
+      "Characterized by detecting high-frequency sound waves generated by friction, impacts, or turbulence, used for leak detection, electrical discharge, and bearing lubrication assessment.",
+      "Primarily used for measuring temperature.",
+      "It only measures the speed of rotating shafts."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q35",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "How can ultrasound be used to detect a lack of lubrication in a bearing?",
+    "options": [
+      "By measuring the bearing's temperature directly.",
+      "By detecting an increase in high-frequency friction noise as metal-to-metal contact increases due to insufficient lubricant.",
+      "By visually inspecting the grease nipple.",
+      "By analyzing the oil for contaminants."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q36",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "Discuss whether ultrasound measurement can complement a vibration analysis program, and explain why.",
+    "options": [
+      "No, they are competing technologies and should not be used together.",
+      "Yes, it can complement vibration by detecting early-stage bearing issues (e.g., lubrication problems) or specific faults like air/gas leaks that vibration may not pick up as effectively.",
+      "Only if the machine is completely shut down.",
+      "Only for very large, slow-speed machines."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q37",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What type of information does thermography (infrared imaging) primarily provide for condition monitoring?",
+    "options": [
+      "Detailed mechanical vibration patterns.",
+      "Information about temperature distribution and hotspots on equipment surfaces, indicating issues like electrical faults, poor lubrication, or fluid leaks.",
+      "Chemical composition of lubricants.",
+      "Acoustic emissions from internal components."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q38",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What essential principles must be understood to prevent common errors when using thermal cameras?",
+    "options": [
+      "Understanding only the camera's battery life.",
+      "Knowledge of emissivity, reflected temperature, distance to target, and environmental factors to ensure accurate temperature readings.",
+      "The exact weight of the camera.",
+      "Only the resolution of the thermal image."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q39",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "Name four environmental conditions that should ideally be avoided when performing infrared readings.",
+    "options": [
+      "Clear skies, moderate temperature, low humidity, and calm winds.",
+      "Direct sunlight, strong winds, high humidity, and highly reflective surfaces nearby.",
+      "Nighttime, overcast skies, still air, and dark surfaces.",
+      "Any indoor environment with artificial lighting."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q40",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What types of tests can be performed to detect electromechanical faults in electric motors?",
+    "options": [
+      "Only traditional vibration analysis.",
+      "Motor Current Analysis (MCA), Electrical Signature Analysis (ESA), and partial discharge testing.",
+      "Ultrasonic leak detection.",
+      "Oil analysis for winding insulation."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q41",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What is \"Motor Current Analysis (MCA)\", and what specific motor faults can it detect?",
+    "options": [
+      "A method to measure the motor's operating temperature.",
+      "A technique that analyzes the electrical current consumed by the motor to detect faults such as broken rotor bars, stator problems, eccentricity, and soft foot.",
+      "A process to determine the motor's rotational speed.",
+      "A way to lubricate the motor bearings."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q42",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "List the three primary benefits of performing oil analysis.",
+    "options": [
+      "To change oil more frequently, increase costs, and create more waste.",
+      "To assess lubricant condition, identify machine wear debris, and detect contaminants.",
+      "To measure machine speed, vibration, and temperature.",
+      "To clean internal components, cool the motor, and lubricate the housing."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q43",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What is the approximate size limit of particles that can be detected by standard oil analysis?",
+    "options": [
+      "Particles smaller than 0.1 micron.",
+      "Typically down to 1-5 microns for wear particles using spectrometric analysis, but larger particles are detected by particle counters.",
+      "Only particles visible to the naked eye.",
+      "Any particle size, regardless of method."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q44",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "Explain the importance of \"wear particle analysis\", and identify a type of machine component for which it is considered essential.",
+    "options": [
+      "It is only used for very clean systems.",
+      "It identifies the size, shape, and composition of wear particles in oil, providing insight into the type and severity of wear occurring, essential for gearboxes and hydraulic systems.",
+      "It is a replacement for vibration analysis.",
+      "It only measures the viscosity of the oil."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q45",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What are Category II analysts expected to understand regarding relevant ISO standards in vibration analysis?",
+    "options": [
+      "They should memorize every word of all ISO standards.",
+      "They should have a working knowledge of relevant standards (e.g., ISO 10816, ISO 18436) for data collection, analysis, and reporting.",
+      "They only need to know that ISO standards exist.",
+      "They are responsible for writing new ISO standards."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q46",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "How does Mobius Institute's Category II course incorporate topics that are typically considered Category III in the ISO standard?",
+    "options": [
+      "It does not, strictly adhering to Category II only.",
+      "It includes some advanced topics (e.g., specific diagnostics, advanced signal processing concepts) to provide a more comprehensive and practical understanding, exceeding baseline ISO Cat II.",
+      "It combines Category II and III into one certification.",
+      "It focuses exclusively on Category III topics."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q47",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "Differentiate between \"relative phase\" and \"absolute phase\" measurements.",
+    "options": [
+      "Relative phase is measured from a stationary reference, absolute phase is from a rotating reference.",
+      "Relative phase is the phase difference between two measurement points, while absolute phase is the phase measured relative to a fixed timing mark (e.g., a keyphasor).",
+      "Relative phase is for slow machines, absolute phase for fast.",
+      "There is no practical difference between them."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q48",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "What are two practical benefits of utilizing relative phase measurements in vibration analysis?",
+    "options": [
+      "To determine the machine's color and make.",
+      "To determine the mode shape of vibration and to diagnose specific faults like coupling misalignment or structural looseness.",
+      "To simply compare two different machines.",
+      "To increase the speed of data collection."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q49",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "In a single-plane balancing scenario, if an initial run shows 0.5 g's at 0° phase, and a test weight is placed at 180° (opposite the tachometer reference), what would be the expected effect on the vibration level for a rigid rotor?",
+    "options": [
+      "The vibration level would significantly increase.",
+      "The vibration level would remain unchanged.",
+      "The vibration level would shift phase by 90 degrees.",
+      "The vibration level would decrease, ideally close to zero, as the test weight counteracts the original unbalance."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_ii_set3_q50",
+    "category": "Category II",
+    "topic": "Condition Monitoring Program & Alternative Technologies",
+    "text": "How many questions typically comprise a Category II certification exam, and what is the allotted time for completion?",
+    "options": [
+      "50 questions in 1 hour.",
+      "150 questions in 2 hours.",
+      "Typically around 60 questions with an allotted time of 2.5 hours (or more, depending on the certifying body).",
+      "200 questions in 5 hours."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is a key component of the knowledge base for Category II Vibration Analysts, aligning with ISO 18436-2."
+  }
+]

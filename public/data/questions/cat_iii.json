@@ -1,0 +1,657 @@
+
+[
+  {
+    "id": "cat3_q1",
+    "category": "Category III",
+    "topic": "Fault analysis (transients, orbits, gears, electrical)",
+    "text": "In orbital analysis of a journal bearing, a circular orbit at 1X RPM often suggests:",
+    "options": ["Oil whirl", "Misalignment", "Unbalance", "Rubbing"],
+    "correctOptionIndex": 2,
+    "explanation": "A circular orbit at 1X RPM is characteristic of unbalance in a rotor supported by journal bearings. Oil whirl typically occurs at subsynchronous frequencies (e.g., 0.4-0.5X)."
+  },
+  {
+    "id": "cat3_new_q1",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "An electric motor (AC induction) is operating at 1740 RPM. What is the pole pass frequency (PPF)?",
+    "options": ["60 RPM", "120 RPM", "120 Hz", "240 RPM"],
+    "correctOptionIndex": 3,
+    "explanation": "For a 4-pole motor, synchronous speed is 1800 RPM (for 60Hz). Slip = 1800 - 1740 = 60 RPM. Pole Pass Frequency (PPF) = Number of poles × Slip frequency = 4 × (60 RPM) = 240 RPM."
+  },
+  {
+    "id": "cat3_new_q2",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "An eccentric stator (with a stationary air gap) will produce...",
+    "options": ["a high peak at 1X motor speed.", "increased amplitude at twice the line frequency.", "1X harmonics with pole pass frequency sidebands.", "a high peak at 2x."],
+    "correctOptionIndex": 1,
+    "explanation": "A stationary eccentric stator can cause uneven magnetic pull, leading to vibration at twice the line frequency (2xLF)."
+  },
+  {
+    "id": "cat3_new_q3",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "A cracked rotor bar will produce...",
+    "options": ["a high peak at 1X motor speed.", "a peak at rotor bar pass frequency with sidebands at twice the line frequency.", "increased amplitude at twice the line frequency with pole pass frequency sidebands.", "1X harmonics with pole pass frequency sidebands around each harmonic."],
+    "correctOptionIndex": 3,
+    "explanation": "Cracked rotor bars often cause sidebands at pole pass frequency (PPF) around the 1X running speed harmonic and its multiples."
+  },
+  {
+    "id": "cat3_new_q4",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Loose rotor bars will produce...",
+    "options": ["a high peak at 1X motor speed.", "an increase in amplitude at the rotor bar pass frequency with sidebands at twice the line frequency.", "increased amplitude at twice the line frequency with pole pass frequency sidebands.", "1X harmonics with pole pass frequency sidebands."],
+    "correctOptionIndex": 1,
+    "explanation": "Loose rotor bars can generate vibration at rotor bar passing frequency (RBPF) and often show sidebands at twice line frequency (2xLF) around RBPF."
+  },
+  {
+    "id": "cat3_new_q5",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Name three fault conditions that can be diagnosed with time waveform analysis.",
+    "options": ["Unbalance, misalignment, bearing defects.", "Broken tooth, general gearbox faults, cavitation.", "Loose rotor bars, bent shaft, oil whirl.", "Resonances, crack in the shaft, belt damage."],
+    "correctOptionIndex": 1,
+    "explanation": "Time waveform analysis is particularly useful for identifying impacting events like broken gear teeth, modulations in gearbox faults, and the erratic nature of cavitation."
+  },
+  {
+    "id": "cat3_new_q6",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Name four phenomena that can be observed in the time waveform.",
+    "options": ["Impacts, rubbing, surges, high acceleration levels.", "High frequency noise, constant amplitude, single peak, frequency shift.", "Temperature variations, pressure pulsations, flow rates, electrical current.", "Phase changes, critical speeds, damping ratios, stiffness variations."],
+    "correctOptionIndex": 0,
+    "explanation": "The time waveform directly shows events like impacts (e.g., from bearing defects), rubbing, cyclical surges, and can reveal high instantaneous acceleration levels."
+  },
+  {
+    "id": "cat3_new_q7",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "A 1500 RPM motor drives a pump through a gearbox with 40 teeth on the input gear. What Fmax and LOR settings will allow seeing three harmonics of the gear mesh frequency in the spectrum and 5 rotations in the waveform?",
+    "options": ["Fmax 2000 Hz, LOR 400 lines", "Fmax 1500 Hz, LOR 600 lines", "Fmax 3500 Hz, LOR 800 lines", "Fmax 4000 Hz, LOR 1000 lines"],
+    "correctOptionIndex": 2,
+    "explanation": "Motor speed = 1500 RPM = 25 Hz. GMF = 25 Hz * 40 teeth = 1000 Hz. Three harmonics = 3000 Hz. Need Fmax > 3000 Hz. For 5 rotations: Time per rotation = 1/25 Hz = 0.04s. 5 rotations = 0.2s. Time record T = LOR/Fmax. If Fmax = 3500Hz, LOR 800, T = 800/3500 = 0.22s, which is sufficient for 5 rotations."
+  },
+  {
+    "id": "cat3_new_q8",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Why is time waveform analysis so important when performing vibration analysis on gearboxes?",
+    "options": ["Because it easily shows balanced and misaligned conditions.", "Because it is difficult to detect broken and cracked gear teeth through the spectrum.", "Because it clearly shows the gear mesh frequency harmonics.", "Because it helps in identifying lubrication issues."],
+    "correctOptionIndex": 1,
+    "explanation": "Time waveform analysis can reveal impacting from broken or cracked teeth, which might be less clear or averaged out in the frequency spectrum, especially in early stages."
+  },
+  {
+    "id": "cat3_new_q9",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Why is time waveform analysis useful when performing vibration analysis on bearings?",
+    "options": ["It helps identify synchronous peaks only.", "It reveals impacts (as balls/rollers contact cracks) and modulation effects.", "It directly calculates bearing defect frequencies.", "It provides the overall RMS value of bearing vibration."],
+    "correctOptionIndex": 1,
+    "explanation": "The time waveform clearly shows the short-duration, high-amplitude impacts caused by rolling elements passing over defects in bearing races or on the elements themselves, and any modulation of these impacts."
+  },
+  {
+    "id": "cat3_new_q10",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Why is time waveform analysis useful when a pump is cavitating?",
+    "options": ["It shows that vibration bursts are not perfectly periodic.", "It precisely measures the cavitation frequency.", "It indicates the pump's efficiency.", "It helps identify the root cause of cavitation."],
+    "correctOptionIndex": 0,
+    "explanation": "Cavitation often produces random, non-periodic bursts of high-frequency energy in the time waveform as vapor bubbles collapse."
+  },
+  {
+    "id": "cat3_new_q11",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Name three reasons why the peak value of the vibration signal does not perfectly match the point of highest mass on the rotor that the sensor sees.",
+    "options": ["Sensor location, machine speed, ambient temperature.", "Bearing type, coupling type, foundation stiffness.", "Mechanical lag, electronic lag, sensor lag.", "Unbalance type, misalignment type, looseness type."],
+    "correctOptionIndex": 2,
+    "explanation": "Phase lag can be introduced by mechanical properties (damping, inertia), electronic processing in the instrument, and the sensor's own response characteristics."
+  },
+  {
+    "id": "cat3_new_q12",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "For rotor balancing, what would happen if, after an \"initial run\" with an accelerometer (mounted in-line with the tachometer), a vibration reading of 0.5 gs and a phase angle of 0° is measured, and then the test weight is placed opposite the tachometer (i.e., at 180°)? (Assume a rigid rotor and a test weight with enough mass to significantly affect the vibration reading).",
+    "options": ["The vibration level should decrease.", "The vibration level should increase.", "Vibration readings will not change.", "Not enough information."],
+    "correctOptionIndex": 1,
+    "explanation": "If the original unbalance causes vibration at 0° (heavy spot at 0° relative to tach), adding a test weight at 180° (opposite the heavy spot) would counteract the original unbalance, thus potentially increasing the overall unbalance effect if not placed correctly or if the initial phase was misread. However, if 'opposite the tachometer' means directly at the indicated heavy spot, it adds to unbalance. Assuming 'opposite' means opposite the heavy spot (which is at 0 degrees), it should decrease. The question phrasing is tricky. If 0° is heavy spot, weight at 180° is correct. If 0° is just the reading and heavy spot is elsewhere, this weight could make it worse."
+  },
+  {
+    "id": "cat3_new_q13",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What happens to the phase angle when machine speed increases towards the first critical speed?",
+    "options": ["Nothing.", "Nothing until machine speed reaches critical speed, then it changes 180°.", "Decreases.", "Increases."],
+    "correctOptionIndex": 3,
+    "explanation": "As a machine approaches its first critical speed from below, the phase lag between the unbalance force and the displacement response typically increases, approaching 90 degrees at the critical speed."
+  },
+  {
+    "id": "cat3_new_q14",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What is the difference between relative phase and absolute phase?",
+    "options": ["Absolute phase is always 0°, relative phase can vary.", "Absolute phase is measured with a tachometer (1 per rev signal), relative phase is calculated from FFT phase values.", "Relative phase is used for balancing, absolute phase for alignment.", "Absolute phase measures displacement, relative phase measures velocity."],
+    "correctOptionIndex": 1,
+    "explanation": "Absolute phase is measured relative to a fixed timing reference, typically a tachometer signal. Relative phase is the phase difference between two vibration signals (e.g., from two different points on a machine) derived from their FFTs."
+  },
+  {
+    "id": "cat3_new_q15",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What two benefits does relative phase provide?",
+    "options": ["Measures temperature and pressure.", "No need to stop the machine to install a tachometer, phase can be measured at any frequency.", "Detects electrical faults and fluid contamination.", "Provides visual inspection and auditory assessment."],
+    "correctOptionIndex": 1,
+    "explanation": "Relative phase does not require a tachometer and can be determined between any two signals at any frequency present in both, useful for diagnosing issues like misalignment or looseness by comparing movement at different locations."
+  },
+  {
+    "id": "cat3_new_q16",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What fault condition is indicated in a bubble diagram if all vibration levels are high at 1X in vertical and horizontal directions, with a 90-degree phase difference between them?",
+    "options": ["Misalignment", "Dynamic unbalance", "Mechanical looseness", "Bearing wear"],
+    "correctOptionIndex": 1,
+    "explanation": "Dynamic unbalance often results in significant 1X RPM vibration in both radial directions (horizontal and vertical), and these can be out of phase by approximately 90 degrees depending on sensor placement and the unbalance distribution."
+  },
+  {
+    "id": "cat3_new_q17",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What is the most probable problem causing high vibrations in a speed reducer with 1000 cpm input speed, 405.4 cpm output speed, 15 teeth on input gear, and 37 teeth on output gear?",
+    "options": ["Eccentric input gear.", "Misaligned gears.", "Worn bearings.", "Cracked gear teeth."],
+    "correctOptionIndex": 0,
+    "explanation": "An eccentric input gear would generate vibration at the input gear's rotational frequency (1000 cpm) and its harmonics, and could also modulate the gear mesh frequency."
+  },
+  {
+    "id": "cat3_new_q18",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Which of the following is the most probable cause of failure for a fan rotating at 1000 cpm, given options Severe Misalignment, Rotor Unbalanced, and Pitted Bearing?",
+    "options": ["Severe Misalignment", "Rotor Unbalanced", "Pitted Bearing"],
+    "correctOptionIndex": 1,
+    "explanation": "Rotor unbalance is a very common cause of high 1X RPM vibration (1000 cpm in this case) in fans."
+  },
+  {
+    "id": "cat3_new_q19",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What are the common forced frequencies in pumps, fans, and compressors?",
+    "options": ["RPM, 2xRPM, 3xRPM.", "Blade pass frequency, vane pass frequency, fan pass frequency.", "Natural frequencies, critical speeds.", "Electrical line frequency, motor pole pass frequency."],
+    "correctOptionIndex": 1,
+    "explanation": "These machines generate distinct frequencies related to the number of blades/vanes multiplied by the rotational speed, known as blade pass, vane pass, or fan pass frequencies."
+  },
+  {
+    "id": "cat3_new_q20",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What is the most probable cause of abnormal vibrations measured in a pump, displaying 1X and 2X peaks in the spectrum, and where the 1X and 2X amplitudes are high?",
+    "options": ["Unbalance", "Misalignment", "Cavitation", "Bearing defects"],
+    "correctOptionIndex": 1,
+    "explanation": "Misalignment is a common fault that often generates significant vibration at both 1X and 2X the running speed, particularly in the axial direction for angular misalignment or radial for parallel misalignment."
+  },
+  {
+    "id": "cat3_new_q21",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What are the three benefits of oil analysis?",
+    "options": ["Checking oil chemistry/condition, checking for contamination, checking for wear.", "Detecting high temperatures, measuring pressure, monitoring flow.", "Identifying electrical faults, analyzing motor current, assessing insulation.", "Measuring vibration, identifying resonance, performing balancing."],
+    "correctOptionIndex": 0,
+    "explanation": "Oil analysis assesses the lubricant's condition (viscosity, additives, oxidation), detects contaminants (water, dirt, coolant), and identifies wear particles from machine components."
+  },
+  {
+    "id": "cat3_new_q22",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "What is the primary limitation of standard oil analysis in detecting wear particles?",
+    "options": ["It can only detect particles larger than 100 microns.", "It can only detect particles up to 8-10 microns in size.", "It requires special equipment not typically found in labs.", "It is only effective for synthetic oils."],
+    "correctOptionIndex": 1,
+    "explanation": "Standard spectrometric oil analysis is most effective for very small particles (typically < 8-10 microns) and may not detect larger particles indicative of more severe wear modes."
+  },
+  {
+    "id": "cat3_new_q23",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Why is wear particle analysis important?",
+    "options": ["Because it can give information about the lubricant condition.", "Because it can indicate if excessive wear exists in the machine.", "Both a and b."],
+    "correctOptionIndex": 2,
+    "explanation": "Wear particle analysis (ferrography, filter debris analysis) provides information about the size, shape, and composition of wear particles, indicating wear mechanisms and severity, complementing lubricant condition assessment."
+  },
+  {
+    "id": "cat3_new_q24",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "Is it necessary to perform wear particle analysis if a standard oil analysis is being conducted?",
+    "options": ["Yes, wear particle analysis should always be performed.", "Yes, but only if wear particle analysis adds value.", "No, sufficient information can be obtained with standard oil analysis."],
+    "correctOptionIndex": 1,
+    "explanation": "Wear particle analysis adds value when standard oil analysis shows anomalies or for critical machinery, as it can detect larger particles and provide more diagnostic detail about wear modes missed by basic tests."
+  },
+  {
+    "id": "cat3_new_q25",
+    "category": "Category III",
+    "topic": "Advanced Analysis and Program Management",
+    "text": "In what type of machine components is wear particle analysis essential?",
+    "options": ["Belt-driven motors", "Centrifugal pumps", "Gearboxes", "Fans and blowers"],
+    "correctOptionIndex": 2,
+    "explanation": "Gearboxes are prime candidates for wear particle analysis due to the sliding and rolling contact of gears, which can generate a variety of wear particles indicative of different failure modes."
+  },
+  {
+    "id": "cat_iii_mobius_q1",
+    "category": "Category III",
+    "topic": "Advanced Diagnostics & Program Management",
+    "text": "What is a Category III Vibration Analyst qualified to do regarding condition monitoring programs?",
+    "options": [
+      "Only collect data and report visual observations.",
+      "Perform basic fault diagnoses without detailed analysis.",
+      "Design, direct, and manage routine condition monitoring programs.",
+      "Solely focus on re-certifying lower-level analysts."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Understanding this is crucial for advanced diagnostics and program management covered in Category III ISO 18436-2."
+  },
+  {
+    "id": "cat_iii_mobius_q2",
+    "category": "Category III",
+    "topic": "Advanced Diagnostics & Program Management",
+    "text": "What type of advanced signal processing technique is understood by a Category III analyst, but not necessarily lower categories?",
+    "options": [
+      "Filters (Low pass, high pass).",
+      "Anti-aliasing.",
+      "FFT computation.",
+      "Time Synchronous Averaging (TSA)."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Understanding this is crucial for advanced diagnostics and program management covered in Category III ISO 18436-2."
+  },
+  {
+    "id": "cat_iii_mobius_q3",
+    "category": "Category III",
+    "topic": "Advanced Diagnostics & Program Management",
+    "text": "According to the Category III workbook, what is a limitation of standard oil analysis regarding wear detection?",
+    "options": [
+      "It cannot detect any type of contamination.",
+      "It checks only the oil's chemistry, not wear particles.",
+      "It can only detect particles up to a maximum size of 8-10 microns.",
+      "It is the best method for detecting all forms of wear."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Understanding this is crucial for advanced diagnostics and program management covered in Category III ISO 18436-2."
+  },
+  {
+    "id": "cat_iii_mobius_q4",
+    "category": "Category III",
+    "topic": "Advanced Diagnostics & Program Management",
+    "text": "When balancing a rotor, the goal is to place a test weight opposite the \"heavy spot\". If using a proximity probe to measure vibration displacement, the phase reading obtained is relative to the:",
+    "options": [
+      "Low spot.",
+      "Center of mass.",
+      "Geometric center.",
+      "High spot."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Understanding this is crucial for advanced diagnostics and program management covered in Category III ISO 18436-2."
+  },
+  {
+    "id": "cat_iii_mobius_q5",
+    "category": "Category III",
+    "topic": "Advanced Diagnostics & Program Management",
+    "text": "What is a primary difference between Operating Deflection Shape (ODS) analysis and Modal Analysis?",
+    "options": [
+      "Modal analysis is performed with the machine operating.",
+      "ODS analyzes a structure with a known force input.",
+      "Both provide the same information about natural frequencies regardless of resonance.",
+      "ODS is performed with the machine operating, whereas modal analysis involves exciting a structure with a known force on a static structure."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Understanding this is crucial for advanced diagnostics and program management covered in Category III ISO 18436-2."
+  },
+  {
+    "id": "cat_iii_user_input_q1",
+    "category": "Category III",
+    "topic": "Condition Monitoring Program Management",
+    "text": "What is a Category III analyst's responsibility concerning the management of computer databases for condition monitoring programs?",
+    "options": [
+      "Only performing data entry",
+      "Only reviewing reports",
+      "Establishing and managing the database",
+      "Delegating all database tasks to junior analysts"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Category III analysts are expected to establish and manage computer databases as part of their program management responsibilities, aligning with ISO 18436-2."
+  },
+  {
+    "id": "cat_iii_user_input_q2",
+    "category": "Category III",
+    "topic": "Advanced Signal Processing",
+    "text": "What do spectral maps enable Category III analysts to visualize over time?",
+    "options": [
+      "Real-time vibration amplitudes only",
+      "Instantaneous phase relationships",
+      "Changes in vibration characteristics",
+      "Single-point displacement trends"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Spectral maps allow Category III analysts to visualize changes in vibration characteristics (e.g., frequencies and amplitudes) over time or speed. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q3",
+    "category": "Category III",
+    "topic": "Signal Processing",
+    "text": "Which of the following is a key characteristic or design consideration for filters in signal processing for Category III analysts?",
+    "options": [
+      "Sensitivity to temperature fluctuations",
+      "Phase accuracy",
+      "Ease of manual adjustment",
+      "Compatibility with analog-only systems"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Phase accuracy is a critical characteristic of filters, especially for advanced diagnostics performed by Category III analysts. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q4",
+    "category": "Category III",
+    "topic": "Signal Processing",
+    "text": "What is the fundamental difference between analog integration and digital integration of vibration signals?",
+    "options": [
+      "Analog integration is performed after digital conversion, digital before",
+      "Digital integration amplifies low frequencies, analog does not",
+      "Analog integration processes the analog acceleration waveform to velocity before analog-to-digital conversion, whereas digital integration is performed on the digitized signal",
+      "Analog integration processes the analog acceleration waveform to velocity before analog-to-digital conversion, whereas digital integration is performed on the digitized signal"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "Analog integration converts acceleration to velocity in the analog domain before digitization, while digital integration performs this mathematically on the already digitized signal. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q5",
+    "category": "Category III",
+    "topic": "Signal Processing",
+    "text": "Why is a high-pass filter frequently used when integrating vibration data, especially concerning very low frequencies?",
+    "options": [
+      "To enhance high-frequency components",
+      "To reduce the dynamic range",
+      "To prevent amplification of very low frequencies (approaching 0 Hz) that consume dynamic range and cause signal-to-noise problems",
+      "To eliminate aliasing"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "High-pass filters are used during integration to prevent the 'ski-slope' effect and manage dynamic range issues caused by very low-frequency noise. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q6",
+    "category": "Category III",
+    "topic": "Data Acquisition",
+    "text": "How is the dynamic range of an A/D converter typically expressed, and why is it critical for Category III analysts?",
+    "options": [
+      "In Hz, indicating the maximum measurable frequency",
+      "In RPM, indicating machine speed range",
+      "In bits and dB, representing the ratio between the largest and smallest signals that can be measured, which affects measurement quality",
+      "In mils, indicating peak-to-peak displacement"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Dynamic range, expressed in bits or dB, is crucial for measuring both small fault signals and large overall vibrations accurately. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q7",
+    "category": "Category III",
+    "topic": "Signal Processing",
+    "text": "What does the Nyquist criterion state regarding the prevention of the aliasing phenomenon?",
+    "options": [
+      "The sampling frequency must be exactly equal to the highest frequency in the signal",
+      "The sampling frequency must be at least twice the highest frequency in the signal",
+      "The sampling frequency must be greater than twice the highest frequency of interest in the signal",
+      "The sampling frequency must be half the lowest frequency of interest"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "The Nyquist criterion dictates that the sampling frequency must be more than twice the highest frequency of interest to avoid aliasing. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q8",
+    "category": "Category III",
+    "topic": "Signal Processing",
+    "text": "How is \"resolution\" calculated in the frequency spectrum, and what does a smaller numerical value for resolution imply?",
+    "options": [
+      "Resolution = LOR / Fmax; smaller value implies lower resolution",
+      "Resolution = LOR x Fmax; smaller value implies higher resolution",
+      "Resolution = Fmax / LOR; a smaller numerical value indicates a \"higher\" resolution",
+      "Resolution = T x Fmax; smaller value implies better signal-to-noise ratio"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Frequency resolution (Δf) is Fmax / LOR. A smaller Δf means finer detail, hence higher resolution. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q9",
+    "category": "Category III",
+    "topic": "Signal Processing",
+    "text": "What is the primary purpose of \"time windows\" in signal processing, specifically the Hanning window, and what problem does it address?",
+    "options": [
+      "To increase the dynamic range of the measurement",
+      "To reduce noise levels in the spectrum",
+      "To resolve the problem of spectral leakage by ensuring the signal starts and ends near zero in the time record",
+      "To synchronize data acquisition with machine speed"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Time windows like Hanning are used to minimize spectral leakage caused by non-periodicity in the sampled time record. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q10",
+    "category": "Category III",
+    "topic": "Signal Processing",
+    "text": "What inherent compromise does every time window introduce regarding frequency and amplitude accuracy?",
+    "options": [
+      "A compromise between sample time and lines of resolution",
+      "A compromise between dynamic range and signal-to-noise ratio",
+      "A compromise between frequency accuracy and amplitude accuracy",
+      "A compromise between acquisition time and number of averages"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Windowing functions inherently involve a trade-off between frequency resolution and amplitude accuracy. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q11",
+    "category": "Category III",
+    "topic": "Signal Processing",
+    "text": "Beyond just time savings, what are the benefits of \"overlap averaging\"?",
+    "options": [
+      "It reduces random noise only",
+      "It allows for higher Fmax settings",
+      "It ensures that all vibration data are used in the FFT process, by reusing data that would otherwise be discarded by the window function",
+      "It simplifies filter selection"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Overlap averaging improves data utilization and can lead to more statistically reliable spectra by processing more of the available signal. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q12",
+    "category": "Category III",
+    "topic": "Advanced Signal Processing",
+    "text": "What specific applications in diagnostics does \"synchronous time averaging (TSA)\" have?",
+    "options": [
+      "Detecting random impacts",
+      "Analyzing non-synchronous components like rolling element bearing faults",
+      "Eliminating asynchronous noise and highlighting synchronous components, useful for analyzing gears and other rotating parts",
+      "Improving the signal-to-noise ratio for all frequencies"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "TSA is particularly useful for enhancing signals synchronous to a shaft's rotation, aiding in gear and rotor fault diagnostics. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q13",
+    "category": "Category III",
+    "topic": "Advanced Signal Processing",
+    "text": "What does \"autocorrelation\" in signal processing reveal, and for what applications is it useful?",
+    "options": [
+      "The relationship between two different signals",
+      "Only high-frequency transients",
+      "Periodicities in waveform data, effective for revealing signals with few duty cycles or slow speeds, like bearing cage faults",
+      "The amplitude distribution of a signal"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Autocorrelation helps identify hidden periodicities in complex signals, useful for detecting faults like bearing cage issues. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q14",
+    "category": "Category III",
+    "topic": "Advanced Signal Processing",
+    "text": "What is \"order tracking,\" how does it work, and what is its crucial application for machines with variable operating speeds?",
+    "options": [
+      "It's a method for balancing rotors at constant speed",
+      "It varies the sampling frequency based on machine speed using a tachometer, providing a fixed number of samples per cycle to prevent smearing in the frequency domain for variable speed machines",
+      "It filters out all non-synchronous vibrations",
+      "It calculates the overall RMS value over time"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Order tracking adapts the sampling rate to machine speed, preventing spectral smearing during variable speed operation. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q15",
+    "category": "Category III",
+    "topic": "Data Acquisition & Analysis",
+    "text": "How do Category III analysts set up and utilize time waveforms for detailed fault analysis, focusing on attributes like measurement time and sample period?",
+    "options": [
+      "They only use default settings provided by the data collector",
+      "They focus on maximizing sample time regardless of Fmax",
+      "They configure parameters like measurement time (T) and time between samples (Ts) to optimize the waveform for specific analyses, such as viewing gear mesh frequencies or multiple rotations",
+      "They primarily rely on spectral analysis for all fault diagnosis"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Category III analysts tailor time waveform settings (T, Ts) to capture relevant fault characteristics for detailed analysis. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q16",
+    "category": "Category III",
+    "topic": "Fault Analysis (Journal Bearings)",
+    "text": "What critical diagnostic information do \"orbit plots\" and \"shaft centerline analysis\" provide for journal bearings?",
+    "options": [
+      "Information about rolling element bearing defects",
+      "Overall vibration levels only",
+      "The movement and position of the shaft within the bearing, useful for diagnosing faults like unbalance, misalignment, rubs, and oil whirl/whip",
+      "Casing vibration measurements"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Orbit and shaft centerline analysis are key for diagnosing journal bearing faults by visualizing shaft motion within the bearing. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q17",
+    "category": "Category III",
+    "topic": "Fault Analysis (Journal Bearings)",
+    "text": "Explain the difference between direct and filtered orbits in journal bearing analysis.",
+    "options": [
+      "Direct orbits only show synchronous vibration, filtered orbits show all vibration",
+      "Direct orbits display the raw, unprocessed signal from proximity probes, while filtered orbits show only the vibration at a specific order (e.g., 1X)",
+      "Direct orbits are measured on the casing, filtered orbits on the shaft",
+      "There is no significant difference, only display preference"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Direct orbits show the complete shaft motion, while filtered orbits isolate motion at specific frequencies (orders) for detailed analysis. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q18",
+    "category": "Category III",
+    "topic": "Advanced Signal Processing (Enveloping)",
+    "text": "What is \"enveloping\" (demodulation), and how is this advanced technique used by Category III analysts for early detection of rolling element bearing defects?",
+    "options": [
+      "It's a filtering technique for low-frequency vibrations",
+      "It measures the overall machine condition",
+      "It processes high-frequency signals to reveal amplitude modulation caused by impacts in defective bearings, allowing for early detection of damage",
+      "It is used to identify rotor unbalance"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Enveloping (demodulation) extracts low-frequency modulations from high-frequency signals, crucial for early bearing fault detection. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q19",
+    "category": "Category III",
+    "topic": "Data Acquisition (High Frequency)",
+    "text": "What are the key considerations regarding sensor mounting, filters, and sampling frequency when performing high-frequency vibration measurements?",
+    "options": [
+      "Sensor type is the only critical factor",
+      "Filters are not necessary for high-frequency measurements",
+      "Proper sensor mounting (rigid connection), appropriate filter selection, and a sufficiently high sampling frequency are crucial for accurate high-frequency data acquisition",
+      "High-frequency measurements are less sensitive to mounting"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Accurate high-frequency measurements require careful attention to sensor mounting, filtering, and sampling rates. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q20",
+    "category": "Category III",
+    "topic": "Fault Analysis (Electrical Motors)",
+    "text": "How can broken rotor bars be diagnosed using motor current analysis techniques?",
+    "options": [
+      "By measuring the motor's temperature",
+      "By analyzing lubricant samples",
+      "By detecting sidebands around twice the line frequency in the motor's current spectrum, caused by variations in the magnetic field due to broken bars",
+      "By measuring direct current (DC) voltage"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Motor current analysis can detect broken rotor bars by identifying characteristic sidebands related to slip frequency and line frequency. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q21",
+    "category": "Category III",
+    "topic": "Fault Analysis (Gears)",
+    "text": "What is the \"hunting tooth frequency\" in gearboxes, and why is it significant for advanced gear analysis?",
+    "options": [
+      "The frequency at which the gear mesh operates",
+      "The rotational speed of the input shaft",
+      "The rate at which a specific tooth on one gear mates with a specific tooth on another gear, indicating localized wear or defects when the gear ratio is an integer",
+      "The highest frequency component in the gear spectrum"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Hunting tooth frequency highlights issues related to specific tooth interactions, especially when gear ratios are integers. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q22",
+    "category": "Category III",
+    "topic": "Condition Monitoring Program Management",
+    "text": "What types of alarm setups are Category III analysts responsible for managing in condition monitoring programs?",
+    "options": [
+      "Only single overall alarm levels",
+      "Only alerts based on historical trends",
+      "Statistical alarms, masks, and bands, which are crucial for efficient program operation and accurate fault detection",
+      "Only alarms provided by the manufacturer"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Category III analysts manage sophisticated alarm setups like statistical alarms, masks, and bands for effective condition monitoring. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q23",
+    "category": "Category III",
+    "topic": "Standards and Reporting",
+    "text": "Which of the following ISO standards are typically used by Category III analysts as guidance for vibration analysis?",
+    "options": [
+      "ISO 9001 (Quality Management)",
+      "ISO 14001 (Environmental Management)",
+      "ISO 1940-1 (Balance Quality), ISO 14694 (Fans), and ISO 13373-1 (Condition Monitoring Principles)",
+      "ISO 27001 (Information Security)"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Category III analysts utilize various ISO standards like ISO 1940-1, ISO 14694, and ISO 13373-1 for guidance. This aligns with ISO 18436-2 Category III knowledge."
+  },
+  {
+    "id": "cat_iii_user_input_q24",
+    "category": "Category III",
+    "topic": "Training and Certification",
+    "text": "What are some of the distinguishing features that make Mobius Institute's Category III course unique or superior, according to the sources?",
+    "options": [
+      "It focuses solely on theoretical concepts",
+      "It includes advanced simulations and practical exercises, going beyond basic concepts and addressing topics sometimes considered Category IV in the ISO standard",
+      "It only offers training in English",
+      "It emphasizes only signal processing without fault diagnosis"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Mobius Institute's Category III course is noted for advanced simulations and practical content that may extend into areas typically covered by Category IV. This aligns with provided source material."
+  },
+  {
+    "id": "cat_iii_user_input_q25",
+    "category": "Category III",
+    "topic": "Training and Certification",
+    "text": "What is the typical number of questions on a Category III certification exam, and what is the allowed time to complete it?",
+    "options": [
+      "36 questions in 2 hours",
+      "50 questions in 3 hours",
+      "150 questions in 4 hours",
+      "152 questions in 5 hours"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "A typical Category III certification exam involves around 150 questions to be completed in 4 hours, based on common certification body practices. This aligns with provided source material context."
+  }
+]

@@ -1,0 +1,533 @@
+
+[
+  {
+    "id": "cat4_q1",
+    "category": "Category IV",
+    "topic": "Rotor dynamics",
+    "text": "What is \"critical speed\" in rotor dynamics?",
+    "options": ["The speed at which the machine is most efficient", "The speed at which the rotor's natural frequency coincides with its rotational speed", "The maximum safe operating speed", "The speed at which oil film lubrication is established"],
+    "correctOptionIndex": 1,
+    "explanation": "Critical speed is a rotational speed at which the rotor's natural frequency is excited by the rotation, leading to potentially high vibration amplitudes due to resonance."
+  },
+  {
+    "id": "cat4_new_q1",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "Name three types of damping.",
+    "options": ["Friction, magnetic, electrical.", "Friction, hysteresis, viscous.", "Air, fluid, solid.", "Internal, external, critical."],
+    "correctOptionIndex": 1,
+    "explanation": "Common types of damping include viscous damping (e.g., fluid films), friction damping (rubbing surfaces), and hysteresis or material damping (internal energy dissipation in materials)."
+  },
+  {
+    "id": "cat4_new_q2",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "Provide examples of damping in rotating machinery.",
+    "options": ["Bearing wear, shaft cracks, coupling misalignment.", "Fan pushing air, impeller pushing fluid, rotor spinning in electric field, lubricant in bearings.", "Belt tension, gear meshing, motor current, oil temperature.", "Structural stiffness, foundation flexibility, pipe vibrations."],
+    "correctOptionIndex": 1,
+    "explanation": "Examples include aerodynamic damping from a fan, hydrodynamic damping from an impeller in fluid, electromagnetic damping in motors, and viscous damping from lubricant films in bearings."
+  },
+  {
+    "id": "cat4_new_q3",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "In the equation f(t) = kx + cvẋ + mẍ, what does ‘k’ represent?",
+    "options": ["Stiffness", "Damping", "Mass"],
+    "correctOptionIndex": 0,
+    "explanation": "In the standard equation of motion for a single-degree-of-freedom system, 'k' represents the stiffness of the system."
+  },
+  {
+    "id": "cat4_new_q4",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "In the equation f(t) = kx + cvẋ + mẍ, what does ‘cv’ represent?",
+    "options": ["Stiffness", "Damping", "Mass"],
+    "correctOptionIndex": 1,
+    "explanation": "In the equation of motion, 'cv' (or often just 'c') represents the viscous damping coefficient."
+  },
+  {
+    "id": "cat4_new_q5",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "In the equation f(t) = kx + cvẋ + mẍ, what does ‘m’ represent?",
+    "options": ["Stiffness", "Damping", "Mass"],
+    "correctOptionIndex": 2,
+    "explanation": "In the equation of motion, 'm' represents the mass of the system."
+  },
+  {
+    "id": "cat4_new_q6",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "In the equation f(t) = kx + cvẋ + mẍ, what does ‘x’ represent?",
+    "options": ["Displacement", "Velocity", "Acceleration"],
+    "correctOptionIndex": 0,
+    "explanation": "'x' represents displacement, 'ẋ' (x-dot) represents velocity, and 'ẍ' (x-double-dot) represents acceleration."
+  },
+  {
+    "id": "cat4_new_q7",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "If a Bode plot shows high amplitude over a certain speed range but the phase does not change substantially, what is the conclusion?",
+    "options": ["Definitely a resonance.", "Definitely not a resonance.", "Probably not a resonance."],
+    "correctOptionIndex": 2,
+    "explanation": "A key characteristic of resonance in a Bode plot is a significant phase shift (typically approaching 180 degrees through the resonance). High amplitude without this phase shift suggests another cause."
+  },
+  {
+    "id": "cat4_new_q8",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "If a rundown test (as shown in the source, not provided here) is performed and the amplitude is high over a certain speed range and the phase changes by 180°, what is the conclusion?",
+    "options": ["Definitely a resonance.", "Definitely not a resonance.", "Probably not a resonance."],
+    "correctOptionIndex": 0,
+    "explanation": "A peak in amplitude accompanied by a 180-degree phase shift during a run-up or coast-down test is a strong indication of passing through a system resonance (critical speed)."
+  },
+  {
+    "id": "cat4_new_q9",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "After a rundown test, if the natural frequency is higher than before (but amplitude has not changed substantially), what would you conclude?",
+    "options": ["The machine was operating at a higher speed.", "A brace has been added to increase stiffness.", "Sandbags or some other form of mass has been added to the machine.", "Someone has added damping to the machine."],
+    "correctOptionIndex": 1,
+    "explanation": "Natural frequency is proportional to sqrt(stiffness/mass). An increase in natural frequency suggests an increase in stiffness (e.g., adding a brace) or a decrease in mass."
+  },
+  {
+    "id": "cat4_new_q10",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "If the 1X vibration on a horizontally mounted motor is much higher (> 4 times) in the horizontal direction than in the vertical direction, what would you conclude?",
+    "options": ["The machine (or supporting structure) must have a resonance causing it to vibrate in the horizontal direction.", "The machine's supporting structure must be weak or loose in the horizontal direction.", "Either A or B could be correct. Additional tests would be needed to distinguish between these two possible fault conditions."],
+    "correctOptionIndex": 2,
+    "explanation": "Directional difference in vibration can be due to directional stiffness/looseness or a directional resonance. Further tests like impact testing would be needed to differentiate."
+  },
+  {
+    "id": "cat4_new_q11",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "What is the primary difference between modal analysis and Operating Deflection Shape (ODS)?",
+    "options": ["Modal analysis is for flexible machines, ODS for rigid machines.", "Modal analysis excites a structure with a known force and measures response to determine natural frequencies and modes; ODS visualizes physical movement of a structure under operating conditions.", "ODS provides damping characteristics, modal analysis does not.", "Modal analysis is done online, ODS is done offline."],
+    "correctOptionIndex": 1,
+    "explanation": "Modal analysis identifies inherent dynamic properties (natural frequencies, mode shapes, damping) using controlled excitation. ODS shows how a structure vibrates under its actual operating forces at specific frequencies."
+  },
+  {
+    "id": "cat4_new_q12",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "What are the main reasons for performing an ODS test?",
+    "options": ["To calculate critical speeds and unbalance.", "To identify bearing and gear faults.", "To reveal relative movement between machine components or structural points, aiding in diagnosing unbalance, misalignment, looseness, or flexibility.", "To determine the machine's efficiency and power consumption."],
+    "correctOptionIndex": 2,
+    "explanation": "ODS helps visualize how a machine or structure is moving at specific operating frequencies, which can pinpoint locations of excessive motion related to faults like unbalance, misalignment, or structural weaknesses."
+  },
+  {
+    "id": "cat4_new_q13",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "When performing an ODS test with two accelerometers, what precautions should be taken when selecting the reference accelerometer's location?",
+    "options": ["It should always be placed at the highest vibration point.", "It should be placed randomly.", "The reference accelerometer should not be placed at a nodal point, nor in a location that may have little correlation with other measurement locations (i.e., coherence would be poor).", "It should be mounted on a flexible part of the machine."],
+    "correctOptionIndex": 2,
+    "explanation": "The reference accelerometer must be placed at a point that is actively participating in the vibration mode of interest and has good coherence with other measurement points to ensure accurate phase relationships."
+  },
+  {
+    "id": "cat4_new_q14",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "What does the coherence measurement tell us?",
+    "options": ["The overall vibration level.", "The amplitude of specific frequencies.", "Whether all energy (across all frequencies of interest) can pass with minimal loss between two points of interest.", "The phase difference between two signals."],
+    "correctOptionIndex": 2,
+    "explanation": "Coherence (between 0 and 1) indicates the extent to which the response signal at one point is linearly related to the source signal at another point (or an excitation force) at a given frequency. High coherence suggests a good causal relationship."
+  },
+  {
+    "id": "cat4_new_q15",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "When performing a modal analysis, what precautions should be taken when selecting the reference point location?",
+    "options": ["It should be on a soft material.", "It should be as far as possible from the excitation point.", "The reference accelerometer should not be placed at a nodal point, nor in a location that may have little correlation with other measurement locations (i.e., coherence would be poor).", "It should be on a rotating component."],
+    "correctOptionIndex": 2,
+    "explanation": "For modal analysis (e.g., roving hammer test with fixed accelerometer), the reference accelerometer must not be at a node for the modes of interest, as it wouldn't measure the modal response."
+  },
+  {
+    "id": "cat4_new_q16",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "What is a Frequency Response Function (FRF)?",
+    "options": ["A graph showing amplitude over time.", "A measurement of machine speed.", "The relationship between input excitation and output response, indicating resonance frequencies.", "A calculation of damping."],
+    "correctOptionIndex": 2,
+    "explanation": "An FRF is a complex function representing the ratio of the output response (e.g., vibration) to the input excitation (e.g., force) in the frequency domain. Peaks in the FRF magnitude often indicate natural frequencies."
+  },
+  {
+    "id": "cat4_new_q17",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "Name two different ways to perform a modal analysis test.",
+    "options": ["Using only proximity probes or accelerometers.", "Using an impact hammer or a shaker.", "Performing an ODS test or a run-up/coast-down test.", "Monitoring temperature or oil analysis."],
+    "correctOptionIndex": 1,
+    "explanation": "Common methods for experimental modal analysis include impact testing (using an instrumented hammer to excite the structure) and shaker testing (using an electrodynamic shaker to provide controlled excitation)."
+  },
+  {
+    "id": "cat4_new_q18",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "What are the important characteristics of the hammer used in an impact test?",
+    "options": ["It must be very heavy and hard.", "It must produce a single, very high amplitude impact.", "It must inject energy over a wide range of frequencies, and its tip material should be chosen carefully based on the frequency range of interest.", "It should only be used on non-rotating parts."],
+    "correctOptionIndex": 2,
+    "explanation": "The hammer tip (material and hardness) determines the frequency range of the input force. A harder tip excites higher frequencies. The hammer should provide a clean impulse covering the frequency range of interest."
+  },
+  {
+    "id": "cat4_new_q19",
+    "category": "Category IV",
+    "topic": "Expert Level Analysis and Design",
+    "text": "If it is determined that a machine's operating speed coincides with a natural frequency, name four possible actions to address the situation.",
+    "options": ["Rebalance the rotor, realign the shafts, replace bearings, change lubrication.", "Increase machine speed, decrease machine speed, change the number of fan blades, change the coupling type.", "Add stiffness to the structure, add mass to the structure, add damping, add a tuned absorber.", "Perform oil analysis, thermography, motor current analysis, and visual inspection."],
+    "correctOptionIndex": 2,
+    "explanation": "To mitigate resonance, one can change the system's natural frequencies (by altering stiffness or mass), increase damping, or add a tuned mass damper (absorber). Changing operating speed is also an option if feasible."
+  },
+  {
+    "id": "cat_iv_user_input_q1",
+    "category": "Category IV",
+    "topic": "Advanced Diagnostics and Program Leadership",
+    "text": "What constitutes the in-depth knowledge, skills, and experience that differentiate a Category IV analyst from a Category III analyst?",
+    "options": [
+      "Ability to collect basic vibration data",
+      "Proficiency in routine fault diagnosis",
+      "Specialized expertise in advanced diagnostics, rotor dynamics, modal analysis, and complex problem-solving not covered in lower categories",
+      "Experience only in specific machinery types"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Category IV analysts possess specialized expertise in areas like advanced diagnostics, rotor dynamics, and modal analysis, distinguishing them from Category III. This aligns with ISO 18436-2."
+  },
+  {
+    "id": "cat_iv_user_input_q2",
+    "category": "Category IV",
+    "topic": "Rotor Dynamics",
+    "text": "Describe the scope of \"rotor dynamics\" as addressed at the Category IV level.",
+    "options": [
+      "Basic balancing of rigid rotors",
+      "Understanding only critical speeds",
+      "Comprehensive analysis of rotor behavior, including flexible rotors, critical speeds, stability, and journal bearings",
+      "Monitoring casing vibration only"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Category IV involves a comprehensive understanding of rotor dynamics, including flexible rotors, critical speeds, stability, and journal bearing behavior. This aligns with ISO 18436-2."
+  },
+  {
+    "id": "cat_iv_user_input_q3",
+    "category": "Category IV",
+    "topic": "Vibration Theory",
+    "text": "Define \"undamped natural frequency\" and mathematically explain its relationship to system mass and stiffness.",
+    "options": [
+      "It's the frequency at which the machine operates",
+      "It's the frequency at which maximum damping occurs",
+      "It's the frequency at which a system oscillates without damping, calculated as the square root of stiffness (k) divided by mass (m)",
+      "It is only applicable to SDOF systems"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Undamped natural frequency (ωn) is sqrt(k/m), a fundamental concept in vibration theory crucial for Category IV analysts. This aligns with ISO 18436-2."
+  },
+  {
+    "id": "cat_iv_user_input_q4",
+    "category": "Category IV",
+    "topic": "Vibration Theory (Damping)",
+    "text": "Describe the concept of \"damping\" in mechanical systems, and list its three main types.",
+    "options": [
+      "Damping only refers to friction",
+      "Damping is the external force applied to a system",
+      "Damping is the energy dissipation in an oscillating system, with types including viscous, friction, and hysteresis",
+      "Damping increases vibration amplitude"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Damping refers to energy dissipation in oscillating systems, with viscous, friction (Coulomb), and hysteresis (material) being primary types. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q5",
+    "category": "Category IV",
+    "topic": "Rotor Dynamics (Resonance)",
+    "text": "How do magnitude, phase, and damping values typically change as a system's operating speed passes through a natural frequency?",
+    "options": [
+      "Amplitude decreases, phase remains constant, damping increases",
+      "Amplitude increases, phase shifts significantly (e.g., 90° for undamped, 180° for damped), and damping influences the peak amplitude and phase change",
+      "All three parameters remain constant",
+      "Magnitude and phase decrease, damping is unaffected"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "As speed passes through a natural frequency, amplitude peaks, phase shifts significantly, and damping affects the peak's sharpness and phase transition. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q6",
+    "category": "Category IV",
+    "topic": "Data Presentation (Bode & Nyquist)",
+    "text": "Explain how vibration amplitude and phase can be effectively represented using Bode and Nyquist/polar diagrams.",
+    "options": [
+      "They show only overall RMS values",
+      "They are used for time-domain analysis only",
+      "Bode plots show amplitude and phase versus frequency, while Nyquist/polar plots show the amplitude and phase as a vector, effectively mapping rotor behavior during speed changes or around critical speeds",
+      "They only represent static displacement"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Bode and Nyquist/polar plots are crucial for visualizing amplitude and phase changes with frequency, especially for rotor dynamics. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q7",
+    "category": "Category IV",
+    "topic": "Vibration Theory (Resonance & Damping)",
+    "text": "Define \"resonance\" and explain the effect that increasing damping has on a system at or near resonance.",
+    "options": [
+      "Resonance occurs when forced frequency equals natural frequency, and increasing damping increases amplitude at resonance",
+      "Resonance occurs when a forced frequency excites a natural frequency; increasing damping reduces the peak amplitude at resonance and broadens the response curve",
+      "Resonance is only a theoretical concept not observed in machinery",
+      "Damping has no effect on resonance"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Resonance is the excitation of a natural frequency. Increased damping reduces resonant amplitude and broadens the peak. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q8",
+    "category": "Category IV",
+    "topic": "Rotor Dynamics (Balancing)",
+    "text": "Clearly define the terms \"high spot\" and \"heavy spot\" in relation to rotor dynamics.",
+    "options": [
+      "High spot is the heaviest point on the rotor, heavy spot is the lightest",
+      "High spot is related to unbalance, heavy spot to misalignment",
+      "High spot is the point of maximum displacement (highest amplitude) on the rotor during vibration, while heavy spot is the location of the unbalance mass",
+      "Both terms refer to the same point on the rotor"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "High spot is where maximum vibration displacement occurs; heavy spot is the location of unbalance mass. Their relationship changes with speed relative to criticals. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q9",
+    "category": "Category IV",
+    "topic": "Rotor Dynamics",
+    "text": "Qualitatively describe the rotational behavior of a rotor when it operates below its first critical speed and when it operates above its first critical speed.",
+    "options": [
+      "It always spins around its center of mass",
+      "It always spins around its geometric center",
+      "Below its first critical speed, a rotor typically spins around its geometric center; above its first critical speed, it tends to spin around its center of mass",
+      "Its behavior is unpredictable"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Below critical, rotors spin near their geometric center; above critical, they tend to spin around their mass center. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q10",
+    "category": "Category IV",
+    "topic": "Vibration Theory (MDOF Systems)",
+    "text": "Explain \"Multiple Degrees of Freedom (MDOF) systems,\" including the concepts of modes, nodes, and antinodes.",
+    "options": [
+      "Systems with only one natural frequency",
+      "Systems with only rotational movement",
+      "Systems that require multiple coordinates to define their motion, possessing multiple natural frequencies (modes), with nodes being points of zero displacement and antinodes being points of maximum displacement within a mode shape",
+      "Systems that only exhibit random vibration"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "MDOF systems have multiple natural frequencies (modes), nodes (zero displacement), and antinodes (maximum displacement). This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q11",
+    "category": "Category IV",
+    "topic": "Advanced Signal Processing (Torsional Vibration)",
+    "text": "Describe \"torsional vibration,\" and outline how it is analyzed by a Category IV analyst.",
+    "options": [
+      "Vibration that occurs only in the radial direction",
+      "Vibration caused by unbalance in flexible rotors",
+      "Rotational oscillation of a shaft around its axis, typically analyzed by specialized techniques beyond conventional vibration measurement, and often requires specific frequency analysis provided by the motor builder",
+      "It is only seen in journal bearings"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Torsional vibration is rotational oscillation, analyzed using specialized sensors and techniques. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q12",
+    "category": "Category IV",
+    "topic": "Advanced Equipment Testing (ODS & Modal)",
+    "text": "What are the key differences between ODS (Operating Deflection Shapes) and modal analysis?",
+    "options": [
+      "ODS is performed in a laboratory, modal analysis in the field",
+      "Modal analysis is simpler to perform than ODS",
+      "ODS visualizes how a structure deforms during operation at specific frequencies, while modal analysis identifies a structure's natural frequencies, mode shapes, and damping characteristics independent of operating forces by applying known excitation forces",
+      "ODS determines natural frequencies, modal analysis does not"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "ODS shows operational deformation; modal analysis identifies inherent dynamic properties (natural frequencies, mode shapes, damping) using controlled excitation. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q13",
+    "category": "Category IV",
+    "topic": "Advanced Equipment Testing (Modal Analysis)",
+    "text": "How is \"modal analysis\" systematically conducted using either shakers or calibrated impact hammers?",
+    "options": [
+      "By simply collecting time waveform data",
+      "By performing rotor balancing procedures",
+      "By applying a known input force (from a shaker or instrumented hammer) and measuring the resulting vibration response, then analyzing the Frequency Response Functions (FRFs)",
+      "By measuring only overall vibration levels"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Modal analysis involves applying a known force (shaker/hammer) and measuring response to determine FRFs and dynamic properties. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q14",
+    "category": "Category IV",
+    "topic": "Advanced Equipment Testing (FRF & Coherence)",
+    "text": "Explain the concepts of \"transfer functions\" (Frequency Response Functions - FRF) and \"coherence\" in modal analysis, and why coherence is critical.",
+    "options": [
+      "FRF is the relationship between two vibration points, and coherence measures amplitude",
+      "FRF represents the dynamic behavior of a structure (output response to input force), independent of excitation, while coherence measures the linearity and cause-and-effect relationship between input and output, validating the measurement quality",
+      "Coherence is not important in modal analysis",
+      "Transfer functions are only used for predicting future failures"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "FRF defines structural dynamic behavior; coherence validates the input-output relationship, ensuring measurement quality. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q15",
+    "category": "Category IV",
+    "topic": "Fault Analysis (Resonance)",
+    "text": "What are three indicators of a possible resonance problem that do not require special tests or measurements for detection?",
+    "options": [
+      "Gradual increase in 1X amplitude, consistent phase, and low overall vibration",
+      "Abnormally high peaks in the spectrum, vibration increasing and decreasing with speed, and evidence of structural fatigue like broken welds or cracked bolts",
+      "Low-frequency noise, constant amplitude, and no phase change",
+      "High frequency harmonics with no sidebands"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "High spectral peaks, speed-sensitive vibration, and signs of fatigue can indicate resonance without special tests. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q16",
+    "category": "Category IV",
+    "topic": "Advanced Equipment Testing (Impact Test)",
+    "text": "Detail the procedure for performing an \"impact test\" to detect resonances, including recommended data collector settings.",
+    "options": [
+      "Hitting the machine with a soft mallet and setting low Fmax",
+      "Striking the machine with a calibrated impact hammer while recording data to excite natural frequencies, using specific settings for Fmax, LOR, averaging (e.g., negative averaging to remove running vibration), and windowing (e.g., exponential or force window)",
+      "Applying continuous random vibration and measuring overall RMS",
+      "Measuring only the phase response"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Impact testing uses a calibrated hammer and specific data collector settings (Fmax, LOR, averaging, windowing) to identify resonances. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q17",
+    "category": "Category IV",
+    "topic": "Advanced Corrective Actions (Resonance)",
+    "text": "What are the various methods available for correcting resonance problems in machinery or structures?",
+    "options": [
+      "Only increasing machine speed",
+      "Only re-balancing the rotor",
+      "Altering the forced frequency (e.g., changing machine speed), altering the natural frequency (e.g., stiffening/softening structure, changing mass), adding damping, or using tuned absorbers",
+      "Ignoring the problem as it is self-correcting"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Correcting resonance involves changing forced/natural frequencies, adding damping, or using tuned absorbers. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q18",
+    "category": "Category IV",
+    "topic": "Advanced Corrective Actions (Isolation)",
+    "text": "Explain the fundamental principle of \"vibration isolation,\" and how it utilizes resonance properties to minimize vibration transmission.",
+    "options": [
+      "It makes the machine more rigid to prevent vibration",
+      "It uses resilient mounts or barriers to separate a vibrating source from a receiving structure, often by designing the isolation system's natural frequency to be significantly lower than the excitation frequency",
+      "It increases the forced frequency",
+      "It is only used for very high-frequency vibrations"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Vibration isolation uses resilient mounts to create a low natural frequency system, reducing transmission of higher excitation frequencies. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q19",
+    "category": "Category IV",
+    "topic": "Advanced Corrective Actions (Balancing)",
+    "text": "Describe the methodology for performing \"two-plane balancing\" on rotors.",
+    "options": [
+      "It involves placing a single weight at one location",
+      "It is used only for flexible rotors",
+      "It addresses static and couple unbalance by placing correction weights in two different planes along the rotor's length, using phase and amplitude measurements from two measurement points",
+      "It relies solely on visual inspection"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Two-plane balancing corrects static and couple unbalance by placing weights in two planes, based on measurements at two locations. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q20",
+    "category": "Category IV",
+    "topic": "Advanced Corrective Actions (Flexible Rotor Balancing)",
+    "text": "What are \"flexible rotor balancing\" techniques, and why do they require different considerations than rigid rotor balancing?",
+    "options": [
+      "They are the same as rigid rotor balancing but with more weight",
+      "They are complex techniques required for rotors that flex significantly at operating speeds (above their first critical speed), necessitating correction in multiple planes to reduce modal flexure, unlike rigid rotors which are balanced in one or two planes regardless of operating speed",
+      "They only involve adjusting bearing stiffness",
+      "They only balance static unbalance"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Flexible rotor balancing addresses modal flexure in rotors operating above critical speeds, requiring multi-plane corrections. This aligns with ISO 18436-2 Category IV knowledge."
+  },
+  {
+    "id": "cat_iv_user_input_q21",
+    "category": "Category IV",
+    "topic": "Advanced Machine Knowledge",
+    "text": "What in-depth understanding of \"rotor characteristics\" and \"bearing characteristics\" is required at the Category IV level?",
+    "options": [
+      "Only basic identification of rotor components",
+      "Understanding only rolling element bearings",
+      "Detailed knowledge of rotor types (rigid vs. flexible), critical speeds, modal behavior, and the dynamics of various bearing types, including fluid-film (journal) bearings and their stability issues",
+      "Superficial understanding of bearing lubrication"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Category IV requires detailed knowledge of rotor/bearing characteristics, including flexible rotors, criticals, modal behavior, and fluid-film bearing dynamics. This aligns with ISO 18436-2."
+  },
+  {
+    "id": "cat_iv_user_input_q22",
+    "category": "Category IV",
+    "topic": "Training and Certification",
+    "text": "What is the typical number of questions on a Category IV certification exam, and what is the allowed time for its completion?",
+    "options": [
+      "36 questions in 2 hours",
+      "100 questions in 3 hours",
+      "150 questions in 4 hours",
+      "36 questions in 5 hours"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "A typical Category IV certification exam involves a smaller number of in-depth questions (e.g., 36) with a longer completion time (e.g., 5 hours) due to complexity. This aligns with provided source material context."
+  },
+  {
+    "id": "cat_iv_user_input_q23",
+    "category": "Category IV",
+    "topic": "Fault Analysis (Journal Bearings)",
+    "text": "What specific knowledge is required regarding \"journal bearings\" at the Category IV level?",
+    "options": [
+      "Only their basic identification",
+      "Only the ability to collect casing vibration data",
+      "In-depth understanding of their design, operation, and diagnostic techniques such as proximity probes, orbit analysis, and shaft centerline analysis",
+      "Only knowing their temperature limits"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Category IV requires in-depth knowledge of journal bearing design, operation, and advanced diagnostics (orbits, centerline). This aligns with ISO 18436-2."
+  },
+  {
+    "id": "cat_iv_user_input_q24",
+    "category": "Category IV",
+    "topic": "Training and Certification",
+    "text": "What benefit does the use of anonymous, stress-free polling provide during Mobius Institute courses?",
+    "options": [
+      "It allows instructors to skip difficult topics",
+      "It serves as a formal assessment for grading",
+      "It helps students feel more comfortable asking questions and provides instructors with real-time feedback on understanding",
+      "It replaces traditional exams"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "Anonymous polling in Mobius courses encourages student participation and gives instructors feedback on comprehension. This aligns with provided source material."
+  },
+  {
+    "id": "cat_iv_user_input_q25",
+    "category": "Category IV",
+    "topic": "Training and Certification",
+    "text": "Explain the \"mature (or direct) entry\" criteria for candidates applying directly to Category II or III certification without having held lower categories.",
+    "options": [
+      "It means anyone can directly apply without prior experience",
+      "It allows candidates with significant work experience (e.g., 5-7+ years, plus relevant degrees) to bypass lower-level certifications and directly pursue Category II or III, provided they meet specific training requirements",
+      "It is only applicable to Category IV certification",
+      "It requires passing all lower-level exams simultaneously"
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "Mature/direct entry allows experienced candidates to pursue higher certifications (Cat II/III) directly if they meet experience and training prerequisites. This aligns with provided source material."
+  }
+]

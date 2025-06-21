@@ -1,0 +1,1305 @@
+[
+  {
+    "id": "cat1_q1",
+    "category": "Category I",
+    "topic": "Principles of vibration",
+    "text": "What is the unit of frequency?",
+    "options": ["Seconds", "Hertz", "Meters", "Newtons"],
+    "correctOptionIndex": 1,
+    "explanation": "Frequency is measured in Hertz (Hz), which represents cycles per second."
+  },
+  {
+    "id": "cat1_q2",
+    "category": "Category I",
+    "topic": "Data acquisition",
+    "text": "Which transducer is commonly used to measure machinery vibration?",
+    "options": ["Thermocouple", "Accelerometer", "Strain Gauge", "Proximity Probe (for casing)"],
+    "correctOptionIndex": 1,
+    "explanation": "Accelerometers are widely used for measuring machinery casing vibration due to their broad frequency response and robustness.",
+    "image": "https://picsum.photos/400/200?image=101"
+  },
+  {
+    "id": "cat1_q3",
+    "category": "Category I",
+    "topic": "Fault analysis (common faults: unbalance, misalignment, looseness, bearing faults)",
+    "text": "A dominant peak at 1X running speed in a vibration spectrum often indicates:",
+    "options": ["Bearing wear", "Misalignment", "Unbalance", "Looseness"],
+    "correctOptionIndex": 2,
+    "explanation": "Unbalance is a common fault that typically manifests as a high vibration level at 1X running speed."
+  },
+  {
+    "id": "cat1_new_q1",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "What are the units of vibration velocity?",
+    "options": ["mils", "g’s", "inches per second", "Inches"],
+    "correctOptionIndex": 2,
+    "explanation": "Vibration velocity is typically measured in units of distance per time, such as inches per second (ips) or millimeters per second (mm/s)."
+  },
+  {
+    "id": "cat1_new_q2",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "The period of vibration is typically measured in",
+    "options": ["days.", "minutes.", "milliseconds.", "nanoseconds."],
+    "correctOptionIndex": 2,
+    "explanation": "The period, the time for one complete cycle of vibration, is often measured in milliseconds (ms)."
+  },
+  {
+    "id": "cat1_new_q3",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "A vibration transducer used to evaluate pump faults and condition should be mounted",
+    "options": ["anywhere.", "on the floor.", "close to the machine bearings.", "on the piping."],
+    "correctOptionIndex": 2,
+    "explanation": "Transducers should be mounted close to the machine bearings to accurately capture the vibration signals originating from the rotating components."
+  },
+  {
+    "id": "cat1_new_q4",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "In vibration work, the Fast Fourier Transform is used to",
+    "options": ["obtain the amount of vibration at machine frequencies.", "transform machine vibration into heat.", "generate a vibration waveform.", "filter out unwanted noise from the data."],
+    "correctOptionIndex": 0,
+    "explanation": "The FFT (Fast Fourier Transform) decomposes a time waveform signal into its constituent frequencies, showing the amplitude of vibration at each frequency."
+  },
+  {
+    "id": "cat1_new_q5",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "What is the best way to monitor the severity of a vibration reading taken on a machine?",
+    "options": ["Compare the reading to previous readings.", "Compare the reading to a specification or standard.", "Both a and b.", "Neither a nor b."],
+    "correctOptionIndex": 2,
+    "explanation": "Monitoring vibration severity involves both trending (comparing to previous readings) and comparing against established limits or standards."
+  },
+  {
+    "id": "cat1_new_q6",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "A motor, mounted on a flexible foundation, has a large component of vibration at 2X operating speed in the vertical direction. What is the most likely fault?",
+    "options": ["mass unbalance", "misalignment", "mechanical looseness", "oil whirl"],
+    "correctOptionIndex": 2,
+    "explanation": "Mechanical looseness, particularly of the type II (structural looseness/flexibility), can often manifest as a high 2X running speed component, especially if the structure is more flexible in one direction."
+  },
+  {
+    "id": "cat1_new_q7",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Which component usually runs at the lowest rotational speed in a machine train?",
+    "options": ["a driver", "an electric motor", "a pump", "a cooling tower fan"],
+    "correctOptionIndex": 3,
+    "explanation": "Cooling tower fans are often large and driven through speed reducers or by slow-speed motors, resulting in lower rotational speeds compared to typical motors or pumps."
+  },
+  {
+    "id": "cat1_new_q8",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "What type of vibration measurements are used for new machine acceptance testing?",
+    "options": ["Overall vibration values", "Overall and spectral vibration values", "Spectral vibration values", "Time waveform vibration values"],
+    "correctOptionIndex": 2,
+    "explanation": "Spectral vibration values provide detailed frequency information necessary for thorough acceptance testing, allowing identification of specific fault conditions or characteristics beyond just an overall level."
+  },
+  {
+    "id": "cat1_new_q9",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "An increase in 1x operating speed vibration on a fan, when there has been no change in operating conditions, may indicate",
+    "options": ["loss of a blade.", "small rolling element bearing defect.", "change in the weather.", "change in operational conditions."],
+    "correctOptionIndex": 0,
+    "explanation": "Loss of a blade on a fan would cause a significant unbalance, leading to an increase in 1X operating speed vibration."
+  },
+  {
+    "id": "cat1_new_q10",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Operation of a machine at its critical speed",
+    "options": ["may cause decreased vibration levels.", "may not change the vibration levels.", "may increase vibration levels.", "will increase its efficiency."],
+    "correctOptionIndex": 2,
+    "explanation": "Operating at a critical speed means the machine's running speed coincides with a natural frequency, leading to resonance and potentially high vibration levels."
+  },
+  {
+    "id": "cat1_new_q11",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "If a spectrum analysis is performed with an Fmax = 60,000 CPM and 800 lines of resolution, what is the frequency resolution?",
+    "options": ["75 Hz", "1.25 Hz", "75 CPM", "1.25 CPM"],
+    "correctOptionIndex": 2,
+    "explanation": "Frequency resolution = Fmax / Lines of Resolution = 60,000 CPM / 800 lines = 75 CPM per line."
+  },
+  {
+    "id": "cat1_new_q12",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "For the spectral analysis setup in the previous question (Fmax = 60,000 CPM, 800 lines), what is the time waveform length, or acquisition time, for the data collector?",
+    "options": ["0.8 seconds", "0.8 minutes", "0.4 seconds", "0.4 minutes"],
+    "correctOptionIndex": 0,
+    "explanation": "Time waveform length T = Lines of Resolution / Fmax (in Hz). Fmax = 60,000 CPM / 60 = 1000 Hz. T = 800 / 1000 Hz = 0.8 seconds."
+  },
+  {
+    "id": "cat1_new_q13",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "A machine operates at 3000 CPM, with a first critical speed of 5800 CPM and a power of 500 kW. The following overall RMS velocity values are measured at its two bearings A and B: A-A: 1.9 mm/s, B-A: 2.1 mm/s. According to ISO 2372, what is the vibratory severity?",
+    "options": ["A (Good)", "B (Satisfactory)", "C (Unsatisfactory)", "D (Unacceptable)"],
+    "correctOptionIndex": 1,
+    "explanation": "Referring to ISO 2372 (now largely superseded by ISO 10816/20816), for a Group I machine (rigid foundation, up to 15kW, or flexible >15kW but <75kW typically), 2.1 mm/s RMS might fall into the 'Satisfactory' or 'Permissible' zone. Actual classification depends on specific machine group and class within the standard."
+  },
+  {
+    "id": "cat1_new_q14",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "An electric motor with rigid support, shaft height 350 mm from its base, operates at 420 CPM. The measured vibratory values are: A-H: 1.6 mm/s; A-V: 1.2 mm/s; A-A: 1.1 mm/s; B-H: 1.0 mm/s; B-V: 1.4 mm/s; B-A: 1.2 mm/s. According to ISO 10816-3, what is the machine's group?",
+    "options": ["Group 1", "Group 2", "Group 3", "Group 4"],
+    "correctOptionIndex": 2,
+    "explanation": "ISO 10816-3 classifies machines. A motor with shaft height 350mm typically falls into Group 3 (Large prime movers and other large machines with rotating masses coupled to them) or Group 1/2 depending on power and foundation. Given the options, and assuming a medium to large motor, Group 3 is plausible."
+  },
+  {
+    "id": "cat1_new_q15",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "For the motor in the previous question, what is the vibratory severity according to ISO 10816-3?",
+    "options": ["A (Good)", "B (Satisfactory)", "C (Unsatisfactory)", "D (Unacceptable)"],
+    "correctOptionIndex": 0,
+    "explanation": "With the highest reading at 1.6 mm/s RMS, for Group 3 machines on rigid foundations, this level generally falls into Zone A (Good), where values are considered newly commissioned."
+  },
+  {
+    "id": "cat1_new_q16",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "What type of sound is typically detected when performing an ultrasound test?",
+    "options": ["High sounds", "High frequency sound", "Low frequency sound"],
+    "correctOptionIndex": 1,
+    "explanation": "Ultrasound testing detects high-frequency sound waves, typically above the range of human hearing (e.g., >20 kHz)."
+  },
+  {
+    "id": "cat1_new_q17",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "How can lack of lubrication in a bearing be detected using ultrasound?",
+    "options": ["By measuring temperature changes.", "Lack of lubrication causes friction that generates sound in the ultrasound range.", "By observing changes in the bearing's physical dimensions.", "By detecting magnetic field variations."],
+    "correctOptionIndex": 1,
+    "explanation": "Insufficient lubrication leads to increased friction and impacts within the bearing, generating high-frequency sounds detectable by ultrasound equipment."
+  },
+  {
+    "id": "cat1_new_q18",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Can ultrasound measurement be used in combination with a vibration analysis program?",
+    "options": ["No, it is unnecessary to perform both.", "Yes, ultrasound measurement can be used to detect faults that vibration cannot detect."],
+    "correctOptionIndex": 1,
+    "explanation": "Yes, ultrasound is complementary to vibration analysis, often detecting early-stage bearing faults or phenomena like air leaks that vibration analysis might miss or detect later."
+  },
+  {
+    "id": "cat1_new_q19",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Name four fault conditions that can be detected with ultrasound measurement.",
+    "options": ["Air leaks, bearing faults, electrical corona, steam trap defects.", "Air leaks, electrical arcing, bearing faults, lubrication problems.", "High temperature, low pressure, shaft misalignment, broken blades.", "Excessive noise, low speed, high current, fluid contamination."],
+    "correctOptionIndex": 1,
+    "explanation": "Ultrasound is effective for detecting air/gas leaks, electrical issues like arcing/corona, early-stage bearing faults, and lubrication problems."
+  },
+  {
+    "id": "cat1_new_q20",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Does a thermographic camera measure temperature?",
+    "options": ["Yes", "No"],
+    "correctOptionIndex": 1,
+    "explanation": "A thermographic camera measures infrared radiation, which is then correlated to temperature. It does not measure temperature directly."
+  },
+  {
+    "id": "cat1_new_q21",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Does thermography provide early warning (months in advance) of bearing wear?",
+    "options": ["Yes", "No"],
+    "correctOptionIndex": 1,
+    "explanation": "Thermography typically detects temperature changes due to advanced wear and friction, not usually months in advance for early bearing wear detection compared to techniques like vibration or ultrasound."
+  },
+  {
+    "id": "cat1_new_q22",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Can thermography be used to indicate an electrical short circuit?",
+    "options": ["Yes", "No"],
+    "correctOptionIndex": 0,
+    "explanation": "Yes, electrical short circuits or high-resistance connections generate heat, which can be detected by thermography as hot spots."
+  },
+  {
+    "id": "cat1_new_q23",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Is it important to be able to take an accurate temperature measurement with thermography?",
+    "options": ["Yes; accuracy is always important.", "No; a relative temperature reading can also be useful.", "No; temperature is not important in thermography."],
+    "correctOptionIndex": 1,
+    "explanation": "While accuracy is good, relative temperature differences (comparing a component to similar ones or to its own baseline) are often very useful for diagnostics, even if absolute accuracy is challenging."
+  },
+  {
+    "id": "cat1_new_q24",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "What environmental conditions should be avoided when taking infrared readings?",
+    "options": ["High humidity, low light, calm wind.", "Sunlight, wind, changing background luminosity.", "High pressure, low temperature, steady machine operation.", "Rain, snow, fog, high vibration."],
+    "correctOptionIndex": 1,
+    "explanation": "Direct sunlight, wind (which causes cooling), and reflective surfaces or rapidly changing background temperatures can significantly affect the accuracy and interpretation of thermographic readings."
+  },
+  {
+    "id": "cat1_new_q25",
+    "category": "Category I",
+    "topic": "Basic Principles and Data Collection",
+    "text": "Which condition monitoring technique can be used on electric motors?",
+    "options": ["Thermography", "Oil/grease analysis", "Vibration analysis", "Motor current analysis", "All of the above"],
+    "correctOptionIndex": 4,
+    "explanation": "All listed techniques (thermography, oil/grease analysis, vibration analysis, and motor current analysis) can be applied to monitor the condition of electric motors."
+  },
+  {
+    "id": "cat_i_mobius_q1",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the primary goal of Mobius Institute's vibration analyst training?",
+    "options": [
+      "To focus solely on preparing students for the certification exam.",
+      "To force-feed facts for quick memorization.",
+      "To make students better vibration analysts who understand what they are doing and can do it well.",
+      "To only cover the minimum requirements of the ISO standard."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q2",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "For a Category I vibration analyst, how is signal processing generally described in training?",
+    "options": [
+      "Advanced, including complex algorithms for noise reduction.",
+      "In-depth, covering detailed analyzer settings and calculations.",
+      "Basic, explaining what is happening inside the analyzer in simple terms.",
+      "Focused on time synchronous averaging and order tracking."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q3",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "According to the Mobius Institute, what should a Category I analyst have a solid understanding of after completing the course?",
+    "options": [
+      "Being a real vibration expert capable of diagnosing many faults.",
+      "What a vibration reading or spectrum means, and that machine condition changes cause vibration changes.",
+      "Advanced modal analysis techniques.",
+      "Comprehensive knowledge of all condition monitoring technologies."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q4",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "Why is taking good measurements during data acquisition crucial for a Category I analyst?",
+    "options": [
+      "It ensures faster data upload to the computer.",
+      "It simplifies the reporting process.",
+      "Improper measurements can lead to incorrect fault diagnoses or missed early warnings of bearing faults.",
+      "It reduces the need for alarm limit adjustments."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q5",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "In Category I training, how is the concept of phase introduced?",
+    "options": [
+      "With extensive detail and complex calculations.",
+      "By focusing primarily on balancing applications.",
+      "As an introduction to the concept, explaining what it means, and showing how to take a measurement.",
+      "Only for two-channel data collectors."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q6",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "Which of the following is an expected capability of a Category I certified person?",
+    "options": [
+      "Designing and managing routine condition monitoring programs.",
+      "Conducting non-routine fault analyses.",
+      "Safely collecting routine route data using a data collector.",
+      "Recommending restrictions in machine operation."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q7",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is a Category I analyst expected to do regarding collected data?",
+    "options": [
+      "Diagnose complex faults based on the data.",
+      "Identify errors in collected data and transfer it to a computer-based system.",
+      "Perform advanced signal analysis on the data.",
+      "Modify pre-established alarm limits."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q8",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What type of information is generally covered for Category I regarding condition monitoring technologies?",
+    "options": [
+      "In-depth analysis of their strengths and weaknesses.",
+      "A quick introduction to each, understanding what each technology brings in basic terms.",
+      "Expertise in all technologies for making comprehensive diagnoses.",
+      "How to set up advanced thermal imaging cameras."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q9",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "According to the sample questions for Category I, what are the units of vibration velocity?",
+    "options": [
+      "mils",
+      "g’s",
+      "inches per second",
+      "Inches"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q10",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is a key principle taught in Category I training regarding machine vibration?",
+    "options": [
+      "Vibration is an unavoidable side effect of machine operation.",
+      "Advanced calculations are required to understand vibration changes.",
+      "As the shaft rotates or gears mesh, one can understand why the vibration changes the way it does.",
+      "Vibration is primarily influenced by external environmental factors."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q11",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the minimum required training hours for Category I certification according to the Vibration Institute?",
+    "options": [
+      "38 hours",
+      "64 hours",
+      "30 hours",
+      "18 hours"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q12",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the minimum required experience for Category I certification in months?",
+    "options": [
+      "18 months",
+      "36 months",
+      "60 months",
+      "6 months"
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q13",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the format for the Category I certification exam?",
+    "options": [
+      "105 multiple-choice questions in 3 hours.",
+      "105 multiple-choice questions in 4 hours.",
+      "63 multiple-choice questions in 5 hours.",
+      "63 multiple-choice questions in 2 hours."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q14",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What type of calculator is recommended for Category I exams?",
+    "options": [
+      "A programmable calculator.",
+      "A smartphone.",
+      "A text-editing calculator.",
+      "A basic scientific calculator."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q15",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the purpose of \"maintenance practices\" training for Category I?",
+    "options": [
+      "To make analysts experts in precision maintenance.",
+      "To fully explain why vibration changes in Category 2.",
+      "To provide a quick introduction to breakdown, preventive, predictive, and precision maintenance.",
+      "To perform advanced calculations for reliability-centered maintenance."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q16",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is a \"Keyphasor\" primarily used for in vibration analysis?",
+    "options": [
+      "Measuring the overall vibration amplitude.",
+      "Obtaining a once-per-revolution signal from the shaft.",
+      "Filtering out unwanted noise from the signal.",
+      "Diagnosing bearing defects at low speeds."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q17",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What does the term \"RMS\" (Root Mean Square) mean in vibration analysis?",
+    "options": [
+      "Root-mean-square",
+      "Reference mm/s",
+      "Root-sum-squared",
+      "Average value"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q18",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the general rule for placing a vibration transducer to evaluate pump faults?",
+    "options": [
+      "Anywhere on the machine.",
+      "On the floor next to the machine.",
+      "Close to the machine bearings.",
+      "On the piping attached to the pump."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q19",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "In vibration work, what is the Fast Fourier Transform (FFT) used for?",
+    "options": [
+      "To transform machine vibration into heat.",
+      "To generate a vibration waveform.",
+      "To filter out unwanted noise from the data.",
+      "To obtain the amount of vibration at machine frequencies."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q20",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What can be a possible cause of an increase in vibration of a fan at operating speed over a period of a month?",
+    "options": [
+      "loss of a blade",
+      "small rolling element bearing defect",
+      "change in the weather",
+      "change in operational conditions"
+    ],
+    "correctOptionIndex": 0,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q21",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the certification term (validity period) for a Mobius Institute ISO certified vibration analyst?",
+    "options": [
+      "1 year",
+      "2 years",
+      "5 years",
+      "10 years"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q22",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the primary focus of Mobius Institute's \"principles of vibration\" section for Category I?",
+    "options": [
+      "Advanced calculations of machine dynamics.",
+      "Detailed fault diagnosis based on complex vibration patterns.",
+      "Explaining terms like frequency, units (CPM, Hz, RMS, peak-to-peak), and how vibration changes with machine operation.",
+      "The application of time synchronous averaging."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q23",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What does Mobius Institute claim about its courses regarding the ISO standard?",
+    "options": [
+      "They only cover the minimum topics required by the standard.",
+      "They are just great preparation for the exam.",
+      "They go beyond the standard to prepare analysts for functions expected of a higher category.",
+      "They solely focus on fact memorization."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q24",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What are Category I analysts encouraged to think about regarding their data collector setup?",
+    "options": [
+      "How to bypass the anti-aliasing filters.",
+      "Whether to maximize the number of averages.",
+      "Whether their data collector is being set up properly, as in many cases it is not.",
+      "How to perform advanced calculations on the device."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_mobius_q25",
+    "category": "Category I",
+    "topic": "Foundational Concepts & Training Philosophy",
+    "text": "What is the meaning of \"period of vibration\"?",
+    "options": [
+      "days",
+      "minutes",
+      "milliseconds",
+      "nanoseconds"
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This principle is emphasized in foundational vibration analyst training, aligning with ISO 18436-2 Category I."
+  },
+  {
+    "id": "cat_i_set3_q1",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "What is the primary goal for someone attending a Category I vibration analyst course offered by Mobius Institute?",
+    "options": [
+      "To become a master diagnostician of all machinery faults.",
+      "To prepare for and pass the Category I certification exam.",
+      "To develop new vibration analysis technologies.",
+      "To manage a large team of vibration analysts."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q2",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "Beyond exam preparation, what is Mobius Institute's true objective for students in their Category I course?",
+    "options": [
+      "To solely focus on theoretical concepts without practical application.",
+      "To ensure students can design complex vibration systems.",
+      "To make students truly proficient in vibration analysis for real-world application.",
+      "To qualify students for Category IV certification immediately."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q3",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "Describe the fundamental principles of mechanical vibration that a Category I analyst should comprehend.",
+    "options": [
+      "Advanced rotor dynamics and non-linear system analysis.",
+      "Complex signal processing and transient analysis.",
+      "Basic concepts like amplitude, frequency, phase, and waveform characteristics.",
+      "Finite Element Analysis (FEA) and modal testing."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q4",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "Name three common units of measure used in machinery condition monitoring that are relevant for a Category I analyst.",
+    "options": [
+      "Pascals, Joules, and Watts.",
+      "Inches per second (ips), millimeters per second (mm/s), and Gs (gravitational units).",
+      "Ohms, Amperes, and Volts.",
+      "Kilograms, Meters, and Seconds."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q5",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "Explain the basic distinction between the time domain and frequency domain representations of vibration data.",
+    "options": [
+      "Time domain shows data as a sequence of events, while frequency domain shows data as energy distribution across different frequencies.",
+      "Time domain is for advanced analysts, frequency domain for beginners.",
+      "Time domain is always a single point, frequency domain is a trend.",
+      "Time domain shows vibration amplitude versus time, while frequency domain shows vibration amplitude versus frequency."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q6",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "How do simulations and animations contribute to a Category I student's understanding of vibration analysis, according to Mobius Institute?",
+    "options": [
+      "They primarily serve as entertainment during breaks.",
+      "They make the course longer than necessary.",
+      "They provide visual and interactive ways to understand complex concepts, enhancing learning and retention.",
+      "They replace the need for practical hands-on experience."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q7",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "Define \"period\" in the context of vibration, and state its typical unit.",
+    "options": [
+      "The number of cycles per unit of time, measured in Hertz (Hz).",
+      "The maximum amplitude of vibration, measured in mils.",
+      "The total duration of a measurement, measured in seconds.",
+      "The time taken for one complete cycle of vibration, typically measured in seconds."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q8",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "What is the definition of \"frequency\" in vibration analysis, and how is it mathematically related to \"period\"?",
+    "options": [
+      "The maximum displacement of a vibrating object, unrelated to period.",
+      "The number of peaks in a time waveform, directly proportional to period.",
+      "The number of cycles per unit of time (e.g., Hz, CPM), and it is the reciprocal of period (f = 1/T).",
+      "The rate at which the vibration signal changes phase, measured in degrees."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q9",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "Differentiate between Peak, Peak-to-Peak, and RMS amplitude measurements.",
+    "options": [
+      "Peak is the average, Peak-to-Peak is the maximum, RMS is the minimum.",
+      "Peak is the maximum displacement from zero, Peak-to-Peak is the total displacement from positive peak to negative peak, and RMS (Root Mean Square) is the effective or energy-equivalent value.",
+      "Peak is for acceleration, Peak-to-Peak for velocity, RMS for displacement.",
+      "They are different terms for the same measurement, only used in different industries."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q10",
+    "category": "Category I",
+    "topic": "Vibration Principles & Fundamentals",
+    "text": "What are the three primary vibration parameters (displacement, velocity, acceleration), and for what general types of machinery problems is each typically best suited for measurement from bearing caps?",
+    "options": [
+      "All are equally suited for all problems.",
+      "Displacement for high frequencies, velocity for very low frequencies, acceleration for mid frequencies.",
+      "Acceleration for unbalance, velocity for misalignment, displacement for bearing faults.",
+      "Displacement for low-frequency events (e.g., unbalance, misalignment), velocity for general machine condition and mid-frequency faults, and acceleration for high-frequency events (e.g., bearing defects, gear mesh)."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q11",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Enumerate the core capabilities expected of a Category I certified person regarding routine data collection.",
+    "options": [
+      "Designing complex sensor arrays and wiring schematics.",
+      "Performing advanced multi-channel vibration tests and modal analysis.",
+      "Performing reliable pre-determined single channel vibration measurements, collecting routine route data safely, making visual observations, and transferring data.",
+      "Developing custom data acquisition software."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q12",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Why is it crucial for a Category I analyst to collect routine route data safely?",
+    "options": [
+      "To extend the battery life of the data collector.",
+      "To prevent personal injury and damage to equipment, adhering to plant safety protocols.",
+      "To ensure data is collected quickly.",
+      "To impress management with their speed."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q13",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "What types of data collection instruments are Category I analysts typically trained to use?",
+    "options": [
+      "Optical interferometers and laser vibrometers.",
+      "High-speed multi-channel data acquisition systems.",
+      "Portable data collectors and basic vibration meters.",
+      "Wireless sensor networks with cloud integration."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q14",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Explain the importance of correct sensor mounting for obtaining reliable vibration measurements.",
+    "options": [
+      "It only affects the appearance of the sensor on the machine.",
+      "Incorrect mounting can lead to inaccurate data, loss of high-frequency information, or poor signal transmission.",
+      "It primarily affects the cost of data collection.",
+      "It determines the type of fault that can be detected."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q15",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "What does the capability of performing reliable pre-determined single channel vibration measurements imply about a Category I analyst's skill set?",
+    "options": [
+      "It implies the ability to design complex diagnostic plans from scratch.",
+      "It implies a deep understanding of advanced signal processing.",
+      "It implies that the analyst can work without any supervision.",
+      "It implies proficiency in following established procedures, using instruments correctly, and ensuring consistency in data collection."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q16",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Describe how a Category I analyst should utilize pre-established alarms when comparing collected vibration measurements.",
+    "options": [
+      "To ignore any readings that exceed the alarm limits.",
+      "To only report alarms that are below the limit.",
+      "To identify measurements that exceed acceptable limits, indicating a potential issue that requires further attention or reporting.",
+      "To set new alarm limits based on every reading."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q17",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "What is the Category I analyst's role in identifying basic errors within collected data?",
+    "options": [
+      "To fix all software bugs in the data collector.",
+      "To design new error correction algorithms.",
+      "To recognize obviously incorrect or illogical readings, such as unusually high or low values, or sensor attachment issues.",
+      "To perform advanced statistical analysis to detect subtle errors."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q18",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Besides vibration data, what visual observations are Category I analysts expected to report on regarding equipment condition?",
+    "options": [
+      "Only the paint color and brand of the machine.",
+      "The weather conditions outside the plant.",
+      "Leaks, excessive heat, unusual noises, signs of wear, loose bolts, or other visible anomalies.",
+      "The number of hours the machine has been running since installation."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q19",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Outline the process of transferring collected data to a computer-based system from the perspective of a Category I analyst.",
+    "options": [
+      "Manually writing down all data points on paper.",
+      "Performing complex network configurations.",
+      "Connecting the data collector to a computer and using software to upload the collected routes and measurements.",
+      "Sending data wirelessly through satellite communication."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q20",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Why is the recognition of poor data crucial for a Category I analyst?",
+    "options": [
+      "It allows them to collect data faster next time.",
+      "To show off their analytical skills.",
+      "To avoid making incorrect diagnoses or recommendations based on faulty information, ensuring the integrity of the analysis program.",
+      "It helps them justify the purchase of a new data collector."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q21",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Based on experience level, who is considered the ideal candidate to attend a Category I course?",
+    "options": [
+      "Seasoned vibration experts with over 20 years of experience.",
+      "PhD students researching advanced rotor dynamics.",
+      "Individuals with little to no prior vibration analysis experience, or those looking to formalize existing basic skills.",
+      "Certified Category III analysts seeking a refresher."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q22",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Identify other plant professionals, beyond dedicated vibration analysts, who could significantly benefit from Category I training, and explain why.",
+    "options": [
+      "Sales representatives and human resources personnel, for general company knowledge.",
+      "Maintenance planners, mechanics, electricians, operators, and reliability engineers, as it helps them understand vibration reports and machine health.",
+      "Only senior executives for strategic planning.",
+      "Accountants for financial reporting."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q23",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "What are some distinguishing features of Mobius Institute's courses, including their interactive elements?",
+    "options": [
+      "They are primarily lecture-based with no visual aids.",
+      "They focus exclusively on theoretical equations and complex calculations.",
+      "Use of 3D animations, simulations, case studies, and interactive software to explain concepts clearly.",
+      "They are designed for self-study with minimal instructor interaction."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q24",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "How does Mobius Institute specifically assess student understanding during the Category I course to ensure no one is left behind?",
+    "options": [
+      "Through surprise, high-stakes written exams daily.",
+      "By requiring students to present complex research papers.",
+      "By relying solely on a final comprehensive exam.",
+      "Through anonymous, stress-free polling and in-class exercises to gauge comprehension without judgment."
+    ],
+    "correctOptionIndex": 3,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q25",
+    "category": "Category I",
+    "topic": "Data Acquisition",
+    "text": "Explain why continuous learning is emphasized in vibration analysis, and how Mobius Institute supports this for Category I analysts after the course concludes.",
+    "options": [
+      "Because vibration analysis is a static field with no new developments.",
+      "Continuous learning is only for Category IV analysts.",
+      "Technology evolves and new problems arise; Mobius supports this through access to learning materials, webinars, and higher-level courses.",
+      "It's emphasized only to justify higher course fees."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q26",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "What fundamental maintenance practices are introduced in the Category I curriculum?",
+    "options": [
+      "Agile maintenance and lean manufacturing.",
+      "Remote autonomous maintenance and AI-driven predictive control.",
+      "Breakdown maintenance, preventive (calendar-based) maintenance, predictive (condition-based) maintenance, and precision (reliability-centered) maintenance.",
+      "Warranty-based maintenance and spare parts inventory management."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q27",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "Distinguish between breakdown maintenance and preventive (calendar-based) maintenance.",
+    "options": [
+      "Both are reactive; breakdown is planned, preventive is unplanned.",
+      "Breakdown maintenance is reactive (fixing after failure), while preventive maintenance is proactive (fixing/checking on a schedule, regardless of condition).",
+      "Breakdown is based on machine condition, preventive is based on cost.",
+      "Breakdown applies to electrical systems, preventive to mechanical."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q28",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "Define predictive (condition-based) maintenance and precision (reliability-centered) maintenance.",
+    "options": [
+      "Predictive is based on historical data; precision is based on operator feedback.",
+      "Predictive maintenance uses condition monitoring to predict failures and schedule maintenance, while precision maintenance focuses on maintaining equipment to exacting standards to prevent failures.",
+      "Predictive is for critical assets; precision is for non-critical assets.",
+      "They are interchangeable terms for modern maintenance."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q29",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "What is the core idea conveyed by teaching various maintenance approaches in a Category I course?",
+    "options": [
+      "To demonstrate that only one maintenance approach is universally superior.",
+      "To confuse students with too many options.",
+      "To demonstrate how different maintenance strategies impact reliability and cost, and to highlight the benefits of a proactive approach.",
+      "To prepare students for a career in maintenance scheduling only."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q30",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "How can understanding condition monitoring technologies shift maintenance planning away from a calendar-based approach?",
+    "options": [
+      "By making maintenance decisions more random.",
+      "By entirely eliminating the need for maintenance.",
+      "By providing data on actual equipment condition, allowing maintenance to be scheduled only when needed, moving to a condition-based approach.",
+      "By increasing the frequency of planned shutdowns."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q31",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "What is \"condition monitoring,\" and what is the Category I analyst's basic involvement with this technology?",
+    "options": [
+      "The process of designing new machinery; Cat I analysts design prototypes.",
+      "The process of monitoring a machine's condition to predict problems; Cat I analysts are primarily involved in routine data collection and basic anomaly recognition.",
+      "The process of repairing machines after failure; Cat I analysts perform repairs.",
+      "The process of cleaning industrial equipment; Cat I analysts are responsible for sanitation."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q32",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "What is the primary objective of introducing various condition monitoring technologies to Category I students?",
+    "options": [
+      "To make them experts in all CM fields immediately.",
+      "To discourage them from using vibration analysis.",
+      "To provide a foundational understanding of the different tools available for assessing machine health beyond just vibration.",
+      "To help them sell CM equipment to plants."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q33",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "Explain the concept that machines communicate their issues through \"their own language\" in the context of vibration.",
+    "options": [
+      "Machines literally speak words that analysts must translate.",
+      "Each machine model has a unique, non-interpretable vibration signature.",
+      "Each type of machine fault generates characteristic vibration patterns or frequencies that, once learned, can be interpreted to diagnose the problem.",
+      "This is a metaphorical concept with no practical application."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q34",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "How does increased understanding of vibration analysis among other plant roles (e.g., maintenance planners, production staff) benefit the vibration analysis program?",
+    "options": [
+      "It makes the vibration analyst's job unnecessary.",
+      "It reduces the overall budget for maintenance.",
+      "It improves communication, fosters better collaboration, and leads to more timely and effective maintenance decisions.",
+      "It causes confusion and misinformation."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q35",
+    "category": "Category I",
+    "topic": "Maintenance Practices & Condition Monitoring Fundamentals",
+    "text": "In what ways does Mobius Institute's Category I course claim to go \"beyond the standard\" requirements?",
+    "options": [
+      "By offering certifications that are not recognized globally.",
+      "By only covering the bare minimum of topics required.",
+      "By focusing on practical application, interactive learning, and ensuring deep understanding rather than just rote memorization for the exam.",
+      "By making the course excessively long and theoretical."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q36",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "Describe \"mass unbalance\" as a machinery fault and how its presence might be observed in vibration data.",
+    "options": [
+      "A bending of the shaft, causing high axial vibration.",
+      "Uneven distribution of mass around a rotating component's centerline, typically causing high vibration at 1x RPM (running speed).",
+      "Looseness in a bearing housing, causing impacts.",
+      "A cracked rotor bar in an electric motor, causing electrical noise."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q37",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "What is \"misalignment\" in machinery, and why is it considered a common fault?",
+    "options": [
+      "It's a rare fault caused by improper bearing installation.",
+      "When two shafts or components are not aligned correctly, causing stress and vibration, and it's common due to installation errors or settling.",
+      "It's a condition where the rotor rubs against the stator.",
+      "It refers to an electrical phase imbalance in a motor."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q38",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "Explain \"mechanical looseness\" as a machinery fault.",
+    "options": [
+      "A uniform expansion of machine components due to heat.",
+      "A condition where the machine is perfectly balanced.",
+      "A condition where parts are not securely fastened, leading to impacts, rubbing, or non-linear vibration behavior, often seen as harmonics of running speed.",
+      "A fault primarily found in hydraulic systems due to fluid aeration."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q39",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "Identify common issues related to rolling element bearings that a Category I analyst should be able to recognize.",
+    "options": [
+      "Only excessive grease amounts.",
+      "Issues solely related to the bearing's outer diameter.",
+      "Outer race, inner race, rolling element, and cage defects, often appearing as high-frequency noise or specific defect frequencies.",
+      "The color of the bearing lubricant."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q40",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "What are \"blade pass frequency\" or \"vane pass frequency\", and what do they generally indicate in a machine's vibration spectrum?",
+    "options": [
+      "The speed at which a machine's internal fan operates, indicating overspeed.",
+      "The number of blades/vanes multiplied by the shaft RPM, indicating potential flow turbulence, cavitation, or structural resonance issues in fans/pumps.",
+      "A frequency related to electrical current in motors, indicating winding faults.",
+      "The frequency of structural bending in the machine's base."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q41",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "Define \"gear mesh frequency\" and its basic significance in diagnosing gear-related issues.",
+    "options": [
+      "The rotational speed of the slowest gear in a gearbox.",
+      "The number of teeth on a gear multiplied by its RPM, indicating wear, misalignment, or loading problems in gearboxes.",
+      "The frequency at which gear oil needs to be changed.",
+      "The natural frequency of the gearbox casing."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q42",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "What effect does operating a machine at or near its critical speed typically have on its vibration levels?",
+    "options": [
+      "A significant decrease in vibration amplitude.",
+      "No noticeable effect on vibration levels.",
+      "A significant increase in vibration amplitude due to resonance with a natural frequency of the rotor.",
+      "It causes the machine to stop suddenly."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q43",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "What is the most probable cause for an increase in vibration if a fan experiences the loss of a blade?",
+    "options": [
+      "A sudden increase in motor speed.",
+      "Development of excessive friction in the bearings.",
+      "Severe mass unbalance, as the weight distribution becomes highly uneven.",
+      "Misalignment between the fan and its motor."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q44",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "Why is it generally recommended to position vibration transducers close to machine bearings for fault evaluation?",
+    "options": [
+      "It makes the sensor easier to remove.",
+      "Bearings are typically the coolest points on a machine.",
+      "Bearings are often the location where faults manifest first, and measurements close to them provide the clearest signal of these issues.",
+      "It ensures that the sensor is protected from external damage."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q45",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "What is the fundamental purpose of the Fast Fourier Transform (FFT) in vibration analysis?",
+    "options": [
+      "To amplify the overall vibration signal.",
+      "To convert a time domain waveform into a frequency spectrum, revealing the individual frequencies present in the vibration signal.",
+      "To smooth out the rough edges of the time waveform.",
+      "To calculate the machine's operating temperature."
+    ],
+    "correctOptionIndex": 1,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q46",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "Which base unit is commonly used to express vibration displacement?",
+    "options": [
+      "Meters per second (m/s).",
+      "Gs (gravitational units).",
+      "Microns (µm) or Mils (thousandths of an inch).",
+      "Revolutions per minute (RPM)."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q47",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "How does a Category I analyst contribute to basic condition monitoring reports?",
+    "options": [
+      "By writing comprehensive diagnostic conclusions for complex faults.",
+      "By solely designing the report templates.",
+      "By documenting collected data, observed anomalies, and flag alerts from pre-established alarms.",
+      "By approving final maintenance recommendations."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q48",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "What is the role of severity charts, graphs, and formulas for a Category I analyst in a basic assessment of fault severity?",
+    "options": [
+      "To confuse the analyst with complex calculations.",
+      "To replace the need for data collection.",
+      "To compare collected vibration levels against standardized guidelines or historical data to assess the urgency or criticality of a detected fault.",
+      "To determine the purchase price of new machinery."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q49",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "What is the basic understanding of \"rotor characteristics\" required for a Category I analyst?",
+    "options": [
+      "In-depth knowledge of advanced rotor dynamics equations.",
+      "The ability to design new rotor geometries.",
+      "An awareness of how rotors behave, including concepts like balance and critical speeds, in a fundamental sense.",
+      "Expertise in manufacturing processes for rotors."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  },
+  {
+    "id": "cat_i_set3_q50",
+    "category": "Category I",
+    "topic": "Basic Fault Recognition",
+    "text": "What type of broadband vibration evaluation criteria is provided by ISO 10816?",
+    "options": [
+      "Detailed diagnostic guidelines for specific bearing faults.",
+      "Specific frequencies for common machinery unbalance.",
+      "Guidelines for acceptable vibration levels in various types of non-reciprocating machines, based on overall vibration severity.",
+      "Instructions for sensor mounting techniques."
+    ],
+    "correctOptionIndex": 2,
+    "explanation": "This fundamental concept is crucial for Category I Vibration Analysts as outlined by ISO 18436-2."
+  }
+]
