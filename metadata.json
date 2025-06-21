@@ -1,0 +1,6 @@
+{
+  "name": "Vib-Test: AI Vibration Analyst Prep",
+  "description": "An AI-powered application to help students prepare for Vibration Analyst certification exams (ISO 18436-2). Features exam simulations, AI-generated case studies, and learning resources.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

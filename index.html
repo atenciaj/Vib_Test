@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vib-Test: AI Vibration Analyst Prep</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0D47A1', // Dark Blue
+              light: '#1976D2',  // Medium Blue
+              dark: '#002171',   // Very Dark Blue
+            },
+            secondary: {
+              DEFAULT: '#FF6F00', // Amber/Orange
+              light: '#FFB300',
+              dark: '#C43E00',
+            },
+            accent: '#4CAF50', // Green
+            background: '#F5F7FA', // Light Grayish Blue
+            card: '#FFFFFF',
+            textPrimary: '#212121', // Dark Gray
+            textSecondary: '#757575', // Medium Gray
+          }
+        }
+      }
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.515.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.5.1",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "recharts": "https://esm.sh/recharts@^2.15.3",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background text-textPrimary">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
