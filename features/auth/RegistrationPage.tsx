@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
@@ -22,14 +21,15 @@ export const RegistrationPage: React.FC = () => {
     setError(null);
     setIsLoading(true);
 
-    if (!email.toLowerCase().endsWith('@vib-test.ltd')) {
-      setError('Registration email must be from the vib-test.ltd domain.');
-      setIsLoading(false);
-      return;
-    }
+    // Eliminado: Validación del dominio del correo electrónico
+    // if (!email.toLowerCase().endsWith('@vib-test.ltd')) {
+    //   setError('Registration email must be from the vib-test.ltd domain.');
+    //   setIsLoading(false);
+    //   return;
+    // }
 
     // Basic password validation for the field, even if not used by Brevo
-    if (password.length > 0 && (password.length < 4 || !/^\d{4,}$/.test(password))) { 
+    if (password.length > 0 && (password.length < 4 || !/^\d{4,}$/.test(password))) {
         setError("If providing a password, it must be at least 4 numeric digits.");
         setIsLoading(false);
         return;
@@ -40,7 +40,7 @@ export const RegistrationPage: React.FC = () => {
       const success = await register({ name, lastName, email, username, country, password });
       if (success) {
         alert('Registration successful! Your contact has been added. You will be redirected to the login page.');
-        navigate('/login'); 
+        navigate('/login');
       } else {
         // Error handling is managed within AuthContext (e.g., alerts for existing user or API errors)
         // setError('Registration failed. Please check the details and try again.'); // This might be redundant if AuthContext alerts.
@@ -116,12 +116,13 @@ export const RegistrationPage: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={darkInputWithIconClasses}
-                placeholder="your.name@vib-test.ltd"
+                placeholder="your.name@example.com" // Changed placeholder
               />
             </div>
-            <p className="mt-1 text-xs text-textSecondary">Email must be from the vib-test.ltd domain.</p>
+            {/* Eliminado: Mensaje de restricción de dominio */}
+            {/* <p className="mt-1 text-xs text-textSecondary">Email must be from the vib-test.ltd domain.</p> */}
           </div>
-          
+
           <div>
             <label htmlFor="username" className="block text-sm font-medium text-textSecondary mb-1">
               Username

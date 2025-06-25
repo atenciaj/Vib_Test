@@ -1,0 +1,24 @@
+{
+  "functions": {
+    "source": "functions",
+    "codebase": "default",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "*.local"
+    ],
+    "predeploy": [
+      "npx eslint@^8.15.0 functions/ --fix" // Ejecuta eslint directamente en la carpeta functions y corrige
+    ]
+  },
+  "hosting": { // << Añadida esta sección
+    "public": "dist", // << Asumiendo que tu construcción frontend crea una carpeta 'dist'
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules"
+    ]
+  }
+}
