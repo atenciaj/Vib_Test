@@ -1,0 +1,95 @@
+// services/pdfGenerator.ts - Reemplaza SOLO la función generatePDFFromHTML
+
+const generatePDFFromHTML = async (htmlContent: string): Promise<Blob> => {
+  try {
+    console.log("📄 Iniciando generación de PDF...");
+    
+    // Importaciones dinámicas para evitar problemas de SSR
+    const jsPDF = (await import('jspdf')).jsPDF;
+    const html2canvas = (await import('html2canvas')).default;
+    
+    // Crear elemento temporal en el DOM
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlContent;
+    
+    // Estilos para el elemento temporal
+    tempDiv.style.position = 'absolute';
+    tempDiv.style.left = '-9999px';
+    tempDiv.style.top = '0';
+    tempDiv.style.width = '794px'; // Ancho A4 en píxeles (210mm * 3.78)
+    tempDiv.style.padding = '40px';
+    tempDiv.style.backgroundColor = 'white';
+    tempDiv.style.fontFamily = 'Arial, sans-serif';
+    tempDiv.style.fontSize = '14px';
+    tempDiv.style.lineHeight = '1.6';
+    tempDiv.style.color = '#333';
+    
+    // Agregar al DOM temporalmente
+    document.body.appendChild(tempDiv);
+    
+    console.log("🖼️ Convirtiendo HTML a imagen...");
+    
+    // Convertir HTML a canvas con alta calidad
+    const canvas = await html2canvas(tempDiv, {
+      scale: 2, // Mayor resolución para mejor calidad
+      useCORS: true,
+      allowTaint: false,
+      backgroundColor: '#ffffff',
+      width: tempDiv.scrollWidth,
+      height: tempDiv.scrollHeight,
+      scrollX: 0,
+      scrollY: 0,
+      windowWidth: tempDiv.scrollWidth,
+      windowHeight: tempDiv.scrollHeight
+    });
+    
+    // Limpiar elemento temporal del DOM
+    document.body.removeChild(tempDiv);
+    
+    console.log("📋 Creando documento PDF...");
+    
+    // Crear nuevo documento PDF
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4',
+      compress: true
+    });
+    
+    // Calcular dimensiones
+    const imgData = canvas.toDataURL('image/png', 1.0);
+    const imgWidth = 210; // A4 width in mm
+    const pageHeight = 297; // A4 height in mm
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    const marginTop = 0;
+    
+    let heightLeft = imgHeight;
+    let position = marginTop;
+    
+    // Agregar primera página
+    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
+    heightLeft -= pageHeight;
+    
+    // Agregar páginas adicionales si el contenido es muy largo
+    while (heightLeft >= 0) {
+      position = heightLeft - imgHeight + marginTop;
+      pdf.addPage();
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
+      heightLeft -= pageHeight;
+    }
+    
+    console.log("✅ PDF generado exitosamente");
+    
+    // Retornar el PDF como blob
+    return pdf.output('blob');
+    
+  } catch (error) {
+    console.error("❌ Error generando PDF:", error);
+    
+    // Fallback: retornar HTML como blob para debugging
+    alert(`Error generando PDF: ${error.message}\n\nSe descargará como HTML para revisión.`);
+    return new Blob([htmlContent], { 
+      type: 'text/html' 
+    });
+  }
+};

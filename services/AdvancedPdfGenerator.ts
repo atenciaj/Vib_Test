@@ -1,0 +1,594 @@
+// services/AdvancedPdfGenerator.ts
+import jsPDF from 'jspdf';
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { ExamResult, Question, ExamCategory } from '../types';
+import { APP_NAME, GEMINI_API_MODEL_TEXT, ALL_TOPICS_BY_CATEGORY } from '../constants';
+
+interface PdfTemplate {
+  name: string;
+  coverStyle: 'corporate' | 'academic' | 'technical';
+  includeCharts: boolean;
+  includeFormulas: boolean;
+  detailLevel: 'basic' | 'detailed' | 'comprehensive';
+}
+
+interface PdfGenerationProgress {
+  stage: string;
+  progress: number;
+  message: string;
+}
+
+export class AdvancedPdfGenerator {
+  private genAI: GoogleGenerativeAI | null = null;
+  private onProgress?: (progress: PdfGenerationProgress) => void;
+
+  constructor(onProgress?: (progress: PdfGenerationProgress) => void) {
+    const apiKey = localStorage.getItem('GEMINI_API_KEY') || process.env.API_KEY;
+    if (apiKey) {
+      this.genAI = new GoogleGenerativeAI(apiKey);
+    }
+    this.onProgress = onProgress;
+  }
+
+  async generateAdvancedPdf(
+    examData: { examResult: ExamResult; questions: Question[]; userAnswers: any[] },
+    template: PdfTemplate = {
+      name: 'academic',
+      coverStyle: 'academic',
+      includeCharts: true,
+      includeFormulas: true,
+      detailLevel: 'comprehensive'
+    }
+  ): Promise<void> {
+    this.updateProgress('Iniciando', 0, 'Preparando datos...');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    
+    // 1. Portada
+    this.updateProgress('Portada', 10, 'Creando portada...');
+    this.createCoverPage(pdf, examData.examResult);
+
+    // 2. Índice
+    pdf.addPage();
+    this.updateProgress('Índice', 15, 'Tabla de contenidos...');
+    this.createTableOfContents(pdf, examData.questions.length);
+
+    // 3. Resumen
+    pdf.addPage();
+    this.updateProgress('Resumen', 25, 'Resumen ejecutivo...');
+    this.createExecutiveSummary(pdf, examData, template.includeCharts);
+
+    // 4. Preguntas
+    this.updateProgress('Preguntas', 45, 'Procesando preguntas...');
+    const enhancedQuestions = await this.enhanceQuestionsWithAI(examData, template.detailLevel);
+
+    for (let i = 0; i < enhancedQuestions.length; i++) {
+      pdf.addPage();
+      const progress = 45 + ((i / enhancedQuestions.length) * 30);
+      this.updateProgress('Preguntas', progress, `Pregunta ${i + 1}/${enhancedQuestions.length}`);
+      this.createQuestionPage(pdf, enhancedQuestions[i], i + 1);
+    }
+
+    // 5. Fórmulas
+    if (template.includeFormulas) {
+      pdf.addPage();
+      this.updateProgress('Fórmulas', 80, 'Fórmulas técnicas...');
+      this.createFormulasSection(pdf, examData.examResult.category);
+    }
+
+    // 6. Plan de estudio
+    pdf.addPage();
+    this.updateProgress('Plan', 90, 'Plan de estudio...');
+    await this.createStudyPlan(pdf, examData);
+
+    // 7. Certificado
+    if (examData.examResult.passed && !examData.examResult.isTrial) {
+      pdf.addPage();
+      this.updateProgress('Certificado', 95, 'Generando certificado...');
+      this.createCertificate(pdf, examData.examResult);
+    }
+
+    // 8. Recursos
+    pdf.addPage();
+    this.updateProgress('Recursos', 98, 'Bibliografía...');
+    this.createBibliography(pdf, examData.examResult.category);
+
+    this.updateProgress('Completado', 100, 'PDF listo');
+    const fileName = `${APP_NAME}_${examData.examResult.category}_${template.name}_${new Date().toISOString().split('T')[0]}.pdf`;
+    pdf.save(fileName);
+  }
+
+  private createCoverPage(pdf: jsPDF, examResult: ExamResult): void {
+    const w = pdf.internal.pageSize.getWidth();
+    const h = pdf.internal.pageSize.getHeight();
+
+    // Fondo azul
+    pdf.setFillColor(41, 128, 185);
+    pdf.rect(0, 0, w, 80, 'F');
+
+    // Título
+    pdf.setTextColor(255, 255, 255);
+    pdf.setFontSize(28);
+    pdf.setFont('helvetica', 'bold');
+    pdf.text(APP_NAME, w / 2, 35, { align: 'center' });
+
+    pdf.setFontSize(16);
+    pdf.setFont('helvetica', 'normal');
+    pdf.text('Reporte de Análisis de Vibraciones', w / 2, 55, { align: 'center' });
+
+    // Info del examen
+    pdf.setTextColor(0, 0, 0);
+    pdf.setFontSize(20);
+    pdf.setFont('helvetica', 'bold');
+    pdf.text(`${examResult.category}`, w / 2, 110, { align: 'center' });
+
+    pdf.setFontSize(14);
+    pdf.setFont('helvetica', 'normal');
+    pdf.text(`Fecha: ${new Date().toLocaleDateString('es-ES')}`, w / 2, 130, { align: 'center' });
+    
+    // Puntuación
+    const scoreColor = examResult.passed ? [34, 139, 34] : [220, 20, 60];
+    pdf.setTextColor(...scoreColor);
+    pdf.setFontSize(48);
+    pdf.setFont('helvetica', 'bold');
+    pdf.text(`${examResult.scorePercent.toFixed(1)}%`, w / 2, 180, { align: 'center' });
+
+    pdf.setTextColor(0, 0, 0);
+    pdf.setFontSize(12);
+    pdf.text(`${examResult.correctAnswers}/${examResult.totalQuestions} correctas`, w / 2, 200, { align: 'center' });
+
+    // Estado
+    const status = examResult.isTrial ? 'PRUEBA' : (examResult.passed ? 'APROBADO' : 'NO APROBADO');
+    pdf.setTextColor(...scoreColor);
+    pdf.setFontSize(18);
+    pdf.setFont('helvetica', 'bold');
+    pdf.text(status, w / 2, 220, { align: 'center' });
+
+    // Pie
+    pdf.setTextColor(100, 100, 100);
+    pdf.setFontSize(10);
+    pdf.text('Análisis técnico con IA | ISO 18436-2', w / 2, h - 20, { align: 'center' });
+  }
+
+  private createTableOfContents(pdf: jsPDF, questionCount: number): void {
+    let y = 30;
+    
+    pdf.setFontSize(18);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(41, 128, 185);
+    pdf.text('Índice', 20, y);
+    y += 20;
+
+    const contents = [
+      ['Resumen Ejecutivo', '3'],
+      ['Preguntas y Respuestas', '4'],
+      ['Fórmulas Técnicas', `${4 + questionCount}`],
+      ['Plan de Estudio', `${5 + questionCount}`],
+      ['Bibliografía', `${6 + questionCount}`]
+    ];
+
+    pdf.setFontSize(12);
+    pdf.setFont('helvetica', 'normal');
+    pdf.setTextColor(0, 0, 0);
+
+    contents.forEach(([title, page]) => {
+      pdf.text(title, 25, y);
+      pdf.text(page, 150, y);
+      y += 10;
+    });
+  }
+
+  private createExecutiveSummary(pdf: jsPDF, examData: any, includeCharts: boolean): void {
+    let y = 30;
+    
+    pdf.setFontSize(18);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(41, 128, 185);
+    pdf.text('Resumen Ejecutivo', 20, y);
+    y += 20;
+
+    // Estadísticas
+    const stats = [
+      `Categoría: ${examData.examResult.category}`,
+      `Puntuación: ${examData.examResult.scorePercent.toFixed(1)}%`,
+      `Correctas: ${examData.examResult.correctAnswers}/${examData.examResult.totalQuestions}`,
+      `Estado: ${examData.examResult.passed ? 'APROBADO' : 'REQUIERE MEJORA'}`,
+      `Tipo: ${examData.examResult.isTrial ? 'Prueba' : 'Completo'}`
+    ];
+
+    pdf.setFontSize(12);
+    pdf.setFont('helvetica', 'normal');
+    pdf.setTextColor(0, 0, 0);
+
+    stats.forEach(stat => {
+      pdf.text(`• ${stat}`, 25, y);
+      y += 8;
+    });
+
+    y += 10;
+
+    // Rendimiento por temas (simplificado)
+    if (includeCharts) {
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('Rendimiento por Tema:', 25, y);
+      y += 15;
+
+      const topics = this.calculateTopicPerformance(examData.questions, examData.userAnswers);
+      topics.forEach(topic => {
+        const pct = ((topic.correct / topic.total) * 100).toFixed(0);
+        const color = topic.correct / topic.total >= 0.7 ? [34, 139, 34] : [220, 20, 60];
+        
+        pdf.setFont('helvetica', 'normal');
+        pdf.setTextColor(0, 0, 0);
+        pdf.text(`${topic.name}:`, 30, y);
+        
+        pdf.setTextColor(...color);
+        pdf.text(`${pct}% (${topic.correct}/${topic.total})`, 120, y);
+        y += 8;
+      });
+    }
+  }
+
+  private async enhanceQuestionsWithAI(examData: any, detailLevel: string) {
+    const enhanced = [];
+    
+    for (const question of examData.questions) {
+      const userAnswer = examData.userAnswers.find((ans: any) => ans.questionId === question.id);
+      const isCorrect = userAnswer?.selectedOptionIndex === question.correctOptionIndex;
+      
+      let details = question.explanation || "Explicación básica";
+      
+      if (this.genAI && detailLevel !== 'basic') {
+        try {
+          const model = this.genAI.getGenerativeModel({ model: GEMINI_API_MODEL_TEXT });
+          const prompt = detailLevel === 'comprehensive' 
+            ? `Análisis técnico detallado para: ${question.text}. Incluye principios físicos, aplicaciones y normas ISO.`
+            : `Explicación técnica para: ${question.text}`;
+
+          const result = await model.generateContent(prompt);
+          details = result.response.text();
+          await new Promise(resolve => setTimeout(resolve, 100));
+        } catch (error) {
+          console.warn(`Error enhancing question ${question.id}:`, error);
+        }
+      }
+
+      enhanced.push({
+        question,
+        userAnswer: userAnswer?.selectedOptionIndex ?? -1,
+        isCorrect,
+        explanation: question.explanation || "Sin explicación",
+        technicalDetails: details
+      });
+    }
+    return enhanced;
+  }
+
+  private createQuestionPage(pdf: jsPDF, questionData: any, questionNumber: number): void {
+    const w = pdf.internal.pageSize.getWidth();
+    let y = 25;
+
+    // Header
+    pdf.setFillColor(240, 248, 255);
+    pdf.rect(10, 10, w - 20, 15, 'F');
+    
+    pdf.setFontSize(14);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(41, 128, 185);
+    pdf.text(`Pregunta ${questionNumber}`, 15, 20);
+
+    const status = questionData.isCorrect ? '✓ CORRECTA' : '✗ INCORRECTA';
+    const statusColor = questionData.isCorrect ? [34, 139, 34] : [220, 20, 60];
+    pdf.setTextColor(...statusColor);
+    pdf.text(status, w - 50, 20);
+
+    y = 35;
+
+    // Pregunta
+    pdf.setFontSize(12);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(0, 0, 0);
+    pdf.text('Pregunta:', 20, y);
+    y += 8;
+
+    pdf.setFont('helvetica', 'normal');
+    const questionText = pdf.splitTextToSize(questionData.question.text, w - 40);
+    questionText.forEach((line: string) => {
+      pdf.text(line, 20, y);
+      y += 6;
+    });
+    y += 8;
+
+    // Opciones
+    pdf.setFont('helvetica', 'bold');
+    pdf.text('Opciones:', 20, y);
+    y += 8;
+
+    questionData.question.options.forEach((option: string, index: number) => {
+      const isSelected = index === questionData.userAnswer;
+      const isCorrect = index === questionData.question.correctOptionIndex;
+      
+      let prefix = `${String.fromCharCode(65 + index)}. `;
+      let textColor = [0, 0, 0];
+      
+      if (isCorrect) {
+        prefix = `${String.fromCharCode(65 + index)}. ✓ `;
+        textColor = [34, 139, 34];
+      } else if (isSelected && !questionData.isCorrect) {
+        prefix = `${String.fromCharCode(65 + index)}. ✗ `;
+        textColor = [220, 20, 60];
+      }
+
+      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(...textColor);
+      const optionText = pdf.splitTextToSize(prefix + option, w - 50);
+      optionText.forEach((line: string) => {
+        pdf.text(line, 25, y);
+        y += 6;
+      });
+      y += 2;
+    });
+
+    y += 10;
+
+    // Análisis técnico
+    pdf.setFontSize(12);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(41, 128, 185);
+    pdf.text('Análisis Técnico:', 20, y);
+    y += 8;
+
+    pdf.setFont('helvetica', 'normal');
+    pdf.setFontSize(10);
+    pdf.setTextColor(0, 0, 0);
+    const technicalText = pdf.splitTextToSize(questionData.technicalDetails, w - 40);
+    
+    technicalText.forEach((line: string) => {
+      if (y > 270) {
+        pdf.addPage();
+        y = 25;
+      }
+      pdf.text(line, 20, y);
+      y += 5;
+    });
+  }
+
+  private createFormulasSection(pdf: jsPDF, category: ExamCategory): void {
+    let y = 30;
+    
+    pdf.setFontSize(18);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(41, 128, 185);
+    pdf.text('Fórmulas Técnicas', 20, y);
+    y += 20;
+
+    const formulas = this.getFormulasForCategory(category);
+    
+    formulas.forEach(formula => {
+      if (y > 250) {
+        pdf.addPage();
+        y = 25;
+      }
+
+      pdf.setFontSize(12);
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(0, 0, 0);
+      pdf.text(formula.name, 25, y);
+      y += 8;
+
+      pdf.setFontSize(11);
+      pdf.setFont('courier', 'normal');
+      pdf.setTextColor(0, 0, 139);
+      pdf.text(formula.formula, 30, y);
+      y += 8;
+
+      pdf.setFont('helvetica', 'normal');
+      pdf.setFontSize(10);
+      pdf.setTextColor(0, 0, 0);
+      const desc = pdf.splitTextToSize(formula.description, 150);
+      desc.forEach((line: string) => {
+        pdf.text(line, 30, y);
+        y += 5;
+      });
+      y += 8;
+    });
+  }
+
+  private async createStudyPlan(pdf: jsPDF, examData: any): Promise<void> {
+    let y = 30;
+    
+    pdf.setFontSize(18);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(41, 128, 185);
+    pdf.text('Plan de Estudio', 20, y);
+    y += 20;
+
+    let plan = '';
+    
+    if (this.genAI) {
+      try {
+        const model = this.genAI.getGenerativeModel({ model: GEMINI_API_MODEL_TEXT });
+        const incorrectQuestions = examData.questions.filter((q: any) => {
+          const userAnswer = examData.userAnswers.find((ans: any) => ans.questionId === q.id);
+          return userAnswer && userAnswer.selectedOptionIndex !== q.correctOptionIndex;
+        });
+
+        const prompt = `Plan de estudio 4 semanas para ${examData.examResult.category}. 
+Puntuación actual: ${examData.examResult.scorePercent.toFixed(1)}%. 
+Errores en: ${incorrectQuestions.map((q: any) => q.topic || 'General').join(', ')}.
+Respuesta concisa en español.`;
+
+        const result = await model.generateContent(prompt);
+        plan = result.response.text();
+      } catch (error) {
+        plan = this.getBasicStudyPlan(examData.examResult.category);
+      }
+    } else {
+      plan = this.getBasicStudyPlan(examData.examResult.category);
+    }
+
+    pdf.setFontSize(11);
+    pdf.setFont('helvetica', 'normal');
+    pdf.setTextColor(0, 0, 0);
+    
+    const splitText = pdf.splitTextToSize(plan, 170);
+    splitText.forEach((line: string) => {
+      if (y > 270) {
+        pdf.addPage();
+        y = 25;
+      }
+      pdf.text(line, 20, y);
+      y += 5;
+    });
+  }
+
+  private createCertificate(pdf: jsPDF, examResult: ExamResult): void {
+    const w = pdf.internal.pageSize.getWidth();
+    const h = pdf.internal.pageSize.getHeight();
+
+    // Borde
+    pdf.setDrawColor(218, 165, 32);
+    pdf.setLineWidth(3);
+    pdf.rect(15, 15, w - 30, h - 30);
+
+    // Título
+    pdf.setTextColor(218, 165, 32);
+    pdf.setFontSize(28);
+    pdf.setFont('helvetica', 'bold');
+    pdf.text('CERTIFICADO', w / 2, 60, { align: 'center' });
+
+    // Contenido
+    pdf.setTextColor(0, 0, 0);
+    pdf.setFontSize(14);
+    pdf.setFont('helvetica', 'normal');
+    pdf.text('Se certifica la aprobación del examen', w / 2, 100, { align: 'center' });
+
+    pdf.setFontSize(20);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(41, 128, 185);
+    pdf.text(`ANALISTA DE VIBRACIONES ${examResult.category}`, w / 2, 130, { align: 'center' });
+
+    pdf.setTextColor(34, 139, 34);
+    pdf.setFontSize(24);
+    pdf.text(`Puntuación: ${examResult.scorePercent.toFixed(1)}%`, w / 2, 160, { align: 'center' });
+
+    pdf.setTextColor(0, 0, 0);
+    pdf.setFontSize(12);
+    pdf.text(`Fecha: ${new Date().toLocaleDateString('es-ES')}`, w / 2, 190, { align: 'center' });
+    pdf.text('ISO 18436-2 | Vib-Test Platform', w / 2, 210, { align: 'center' });
+  }
+
+  private createBibliography(pdf: jsPDF, category: ExamCategory): void {
+    let y = 30;
+    
+    pdf.setFontSize(18);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setTextColor(41, 128, 185);
+    pdf.text('Recursos Adicionales', 20, y);
+    y += 20;
+
+    const resources = this.getResourcesForCategory(category);
+    
+    resources.forEach(resource => {
+      if (y > 250) {
+        pdf.addPage();
+        y = 25;
+      }
+
+      pdf.setFontSize(11);
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(0, 0, 0);
+      pdf.text(`• ${resource.title}`, 25, y);
+      y += 6;
+
+      pdf.setFont('helvetica', 'normal');
+      pdf.setFontSize(10);
+      pdf.setTextColor(100, 100, 100);
+      pdf.text(resource.author, 30, y);
+      y += 10;
+    });
+  }
+
+  private updateProgress(stage: string, progress: number, message: string): void {
+    if (this.onProgress) {
+      this.onProgress({ stage, progress, message });
+    }
+  }
+
+  private calculateTopicPerformance(questions: Question[], userAnswers: any[]) {
+    const topicStats: { [key: string]: { correct: number; total: number } } = {};
+    
+    questions.forEach(q => {
+      const topic = q.topic || 'General';
+      if (!topicStats[topic]) {
+        topicStats[topic] = { correct: 0, total: 0 };
+      }
+      topicStats[topic].total++;
+      
+      const userAnswer = userAnswers.find(ans => ans.questionId === q.id);
+      if (userAnswer && userAnswer.selectedOptionIndex === q.correctOptionIndex) {
+        topicStats[topic].correct++;
+      }
+    });
+
+    return Object.entries(topicStats).map(([name, stats]) => ({ name, ...stats }));
+  }
+
+  private getFormulasForCategory(category: ExamCategory) {
+    const formulas = [
+      { name: "Frecuencia", formula: "f = 1/T", description: "T = período en segundos" },
+      { name: "Velocidad", formula: "V = 2π×f×D", description: "f=Hz, D=desplazamiento pp" },
+      { name: "Aceleración", formula: "A = (2π×f)²×D/386.4", description: "Resultado en g" }
+    ];
+
+    if (category === ExamCategory.CAT_III || category === ExamCategory.CAT_IV) {
+      formulas.push(
+        { name: "Freq. Natural", formula: "fn = (1/2π)×√(k/m)", description: "k=rigidez, m=masa" },
+        { name: "Factor Q", formula: "Q = fn/Δf", description: "Δf = ancho banda -3dB" }
+      );
+    }
+
+    return formulas;
+  }
+
+  private getResourcesForCategory(category: ExamCategory) {
+    const basic = [
+      { title: "ISO 18436-2:2014", author: "ISO", description: "" },
+      { title: "Machinery Vibration: Measurement and Analysis", author: "Victor Wowk", description: "" }
+    ];
+
+    if (category === ExamCategory.CAT_III || category === ExamCategory.CAT_IV) {
+      basic.push(
+        { title: "Rotor Dynamics of Turbomachinery", author: "John M. Vance", description: "" },
+        { title: "Modal Testing: Theory and Practice", author: "Peter Avitabile", description: "" }
+      );
+    }
+
+    return basic;
+  }
+
+  private getBasicStudyPlan(category: ExamCategory): string {
+    return `Plan de Estudio - ${category}
+
+Semana 1: Fundamentos
+- Principios básicos (2h/día)
+- ISO 18436-2 relevante
+- Fórmulas básicas
+
+Semana 2: Medición y Análisis
+- Adquisición de datos (1.5h/día)
+- FFT y procesamiento
+- Interpretación de espectros
+
+Semana 3: Diagnóstico
+- Patrones de fallas (2h/día)
+- Desbalance, desalineación
+- Rodamientos y engranajes
+
+Semana 4: Práctica
+- Exámenes completos (2h/día)
+- Revisión de áreas débiles
+- Preparación final
+
+Total: 35-40 horas de estudio`;
+  }
+}
