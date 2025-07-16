@@ -124,4 +124,130 @@ app.post("/brevo-proxy/register-contact", async (req, res) => {
   }
 });
 
+// Nuevo endpoint para registro con verificación por email
+app.post("/brevo-proxy/register-with-verification", async (req, res) => {
+  const BREVO_API_KEY = process.env.BREVO_API_KEY;
+  
+  if (!BREVO_API_KEY) {
+    console.error("Error: La clave API de Brevo no está configurada");
+    return res.status(500).json({message: "Error de configuración del servidor"});
+  }
+
+  const { email, attributes, verificationToken, frontendUrl } = req.body;
+  
+  // Validación básica
+  if (!email || !attributes || !verificationToken || !frontendUrl) {
+    console.warn("Faltan datos requeridos en la petición:", req.body);
+    return res.status(400).json({
+      message: "Faltan datos requeridos (email, attributes, verificationToken, frontendUrl)"
+    });
+  }
+
+  // URL de verificación que se incluirá en el email
+  const verificationUrl = `${frontendUrl}/verify-email?token=${verificationToken}`;
+  
+  // Payload para email transaccional
+  const emailPayload = {
+    to: [{ 
+      email: email, 
+      name: attributes.FIRSTNAME 
+    }],
+    templateId: 3, // ⚠️ REEMPLAZA CON EL ID REAL DE TU PLANTILLA DE BREVO
+    params: {
+      verification_url: verificationUrl,
+      user_name: attributes.FIRSTNAME
+    }
+  };
+
+  try {
+    console.log("Enviando email de verificación:", JSON.stringify(emailPayload, null, 2));
+    
+    // Llamar a la API de emails transaccionales de Brevo
+    const brevoResponse = await axios.post(
+      "https://api.brevo.com/v3/smtp/email", // Endpoint para emails transaccionales
+      emailPayload,
+      {
+        headers: {
+          "accept": "application/json",
+          "api-key": BREVO_API_KEY,
+          "content-type": "application/json",
+        },
+      }
+    );
+
+    if (brevoResponse.status === 201) {
+      console.log("Email de verificación enviado exitosamente:", brevoResponse.data);
+      res.status(200).json({
+        message: "Email de verificación enviado exitosamente",
+        messageId: brevoResponse.data.messageId
+      });
+    } else {
+      console.warn("Respuesta inesperada de Brevo:", brevoResponse.status, brevoResponse.data);
+      res.status(brevoResponse.status).json({
+        message: "Respuesta inesperada del servicio de email",
+        details: brevoResponse.data
+      });
+    }
+  } catch (err) {
+    console.error("Error enviando email de verificación:");
+    if (err.response) {
+      console.error("Datos del error de Brevo:", err.response.data);
+      console.error("Status del error de Brevo:", err.response.status);
+      
+      res.status(err.response.status).json({
+        message: "Error enviando email de verificación",
+        details: err.response.data
+      });
+    } else if (err.request) {
+      console.error("No se recibió respuesta de Brevo:", err.request);
+      res.status(503).json({
+        message: "No se pudo contactar el servicio de email. Inténtalo más tarde."
+      });
+    } else {
+      console.error("Error configurando la petición:", err.message);
+      res.status(500).json({
+        message: "Error interno del servidor"
+      });
+    }
+  }
+});
+
+// Endpoint para verificar el token y completar el registro
+app.post("/brevo-proxy/verify-email", async (req, res) => {
+  const { token } = req.body;
+  
+  if (!token) {
+    return res.status(400).json({
+      message: "Token de verificación requerido",
+      code: "missing_token"
+    });
+  }
+
+  try {
+    // Aquí deberías verificar el token contra tu base de datos
+    // Por ahora, simplemente respondemos que la verificación fue exitosa
+    // En una implementación real, aquí registrarías al usuario en Brevo como contacto
+    
+    console.log("Token de verificación recibido:", token);
+    
+    // TODO: Implementar lógica real de verificación
+    // 1. Buscar usuario pendiente por token
+    // 2. Verificar que no haya expirado
+    // 3. Registrar contacto en Brevo
+    // 4. Marcar como verificado
+    
+    res.status(200).json({
+      message: "Email verificado exitosamente",
+      verified: true
+    });
+    
+  } catch (err) {
+    console.error("Error verificando email:", err);
+    res.status(500).json({
+      message: "Error interno verificando email",
+      code: "verification_error"
+    });
+  }
+});
+
 module.exports = app;

@@ -82,3 +82,9 @@ export const ALL_TOPICS_BY_CATEGORY = {
   [ExamCategory.CAT_III]: TOPICS_CAT_III,
   [ExamCategory.CAT_IV]: TOPICS_CAT_IV,
 };
+// Nuevos endpoints para verificación de email
+export const BREVO_PROXY_VERIFICATION_ENDPOINT = 'https://us-central1-vib-test-d5aec.cloudfunctions.net/api/brevo-proxy/register-with-verification';
+export const BREVO_PROXY_VERIFY_ENDPOINT = 'https://us-central1-vib-test-d5aec.cloudfunctions.net/api/brevo-proxy/verify-email';
+
+// ID de plantilla de Brevo - REEMPLAZA CON EL ID REAL DE TU PLANTILLA
+export const BREVO_VERIFICATION_TEMPLATE_ID = 3; // CAMBIAR POR EL ID REAL

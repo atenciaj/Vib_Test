@@ -2,6 +2,9 @@ import React, { createContext, useState, useContext, ReactNode, useEffect, useCa
 import { User, AuthUser } from '../types';
 import { ADMIN_USERNAME, ADMIN_PASSWORD } from '../constants';
 import { useNavigate } from 'react-router-dom';
+import { PendingUser, savePendingUser } from '../utils/tempStorage';
+import { generateClientToken } from '../utils/validation';
+import { BREVO_PROXY_VERIFICATION_ENDPOINT } from '../constants';
 
 interface AuthContextType {
   currentUser: AuthUser | null;
@@ -67,58 +70,67 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, []);
 
   const register = useCallback(async (userData: Omit<User, 'id' | 'registrationDate' | 'password'> & { password?: string }): Promise<boolean> => {
-    // Prepare the payload to send to the backend proxy
-    // The backend proxy expects email and attributes
+    // Generar token de verificación
+    const verificationToken = generateClientToken();
+    const verificationTokenExpiry = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(); // 24 horas
+    
+    // Crear usuario pendiente de verificación
+    const pendingUser: PendingUser = {
+      ...userData,
+      verificationToken,
+      verificationTokenExpiry,
+      createdAt: new Date().toISOString(),
+      isEmailVerified: false,
+      registrationStatus: 'pending'
+    };
+    
+    // Guardar usuario pendiente localmente
+    savePendingUser(pendingUser);
+    
+    // Preparar payload para el backend (nuevo endpoint de verificación)
     const payloadToSendToBackend = {
       email: userData.email,
       attributes: {
         FIRSTNAME: userData.name,
         LASTNAME: userData.lastName,
         COUNTRY: userData.country,
-        USERNAME: userData.username // Assuming USERNAME is a custom attribute in Brevo
+        USERNAME: userData.username
       },
-    }
+      verificationToken,
+      frontendUrl: window.location.origin // URL base de tu frontend
+    };
 
     try {
-      // Call the backend proxy endpoint
-      const response = await fetch(BREVO_PROXY_REGISTER_ENDPOINT, {
+      // Llamar al nuevo endpoint de verificación
+      const response = await fetch(BREVO_PROXY_VERIFICATION_ENDPOINT, {
         method: 'POST',
         headers: {
           'accept': 'application/json',
           'content-type': 'application/json',
         },
-        body: JSON.stringify(payloadToSendToBackend), // Send the payload to the backend
+        body: JSON.stringify(payloadToSendToBackend),
       });
 
-      // The backend proxy should return 200 OK on success
       if (response.ok) {
-        // Backend successfully called Brevo API and it succeeded
-        console.log("Registration successful via backend proxy.");
-        // Depending on your needs, you might want to read response.json() here
-        // const responseData = await response.json();
-        // console.log("Backend proxy response:", responseData);
+        console.log("Email de verificación enviado exitosamente.");
         return true;
       } else {
-        // The backend proxy returned an error status (e.g., 400, 409, 500)
         const errorData = await response.json();
-        // Asegúrate de que error.response exista antes de acceder a status
-        const errorStatus = error && error.response && error.response.status ? error.response.status : 'Unknown';
-        console.error('Backend proxy registration error:', errorStatus, errorData); // Log backend error
-        let errorMessage = 'Registration failed. Please try again.';
+        console.error('Error enviando email de verificación:', errorData);
+        let errorMessage = 'Error enviando email de verificación. Intenta nuevamente.';
         if (errorData && errorData.message) {
-            // Customize error messages based on backend response structure
-            if (errorData.code === 'duplicate_parameter') { // Assuming backend passes Brevo's code
-                errorMessage = 'This email address is already registered.';
-            } else {
-                errorMessage = `Registration failed: ${errorData.message}`;
-            }
+          if (errorData.code === 'duplicate_parameter') {
+            errorMessage = 'Este email ya está registrado.';
+          } else {
+            errorMessage = `Error: ${errorData.message}`;
+          }
         }
         alert(errorMessage);
         return false;
       }
     } catch (error) {
-      console.error('Network error or unhandled error calling backend proxy:', error);
-      alert('An unexpected error occurred during registration. Please try again later.');
+      console.error('Error de red enviando email de verificación:', error);
+      alert('Error de conexión. Intenta nuevamente más tarde.');
       return false;
     }
   }, []);

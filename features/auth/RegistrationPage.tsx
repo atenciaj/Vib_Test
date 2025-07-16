@@ -39,15 +39,12 @@ export const RegistrationPage: React.FC = () => {
       // Pass all fields; AuthContext's register function will decide what to send to Brevo
       const success = await register({ name, lastName, email, username, country, password });
       if (success) {
-        alert('Registration successful! Your contact has been added. You will be redirected to the login page.');
-        navigate('/login');
-      } else {
-        // Error handling is managed within AuthContext (e.g., alerts for existing user or API errors)
-        // setError('Registration failed. Please check the details and try again.'); // This might be redundant if AuthContext alerts.
+        // CAMBIADO: En lugar de mostrar alert y redirigir a login
+        // ahora redirigimos a la página de "check email"
+        navigate('/check-email');
       }
     } catch (err: any) {
-      setError(err.message || 'An unexpected error occurred. Please try again.');
-      console.error(err);
+      setError(err.message || 'Error durante el registro. Intenta nuevamente.');
     } finally {
       setIsLoading(false);
     }
