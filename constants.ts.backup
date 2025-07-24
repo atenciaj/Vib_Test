@@ -1,6 +1,6 @@
 import { ExamCategory } from './types'; // Added import for ExamCategory
 
-export const GEMINI_API_MODEL_TEXT = "gemini-1.5-flash";
+export const GEMINI_API_MODEL_TEXT = "gemini-2.5-flash-preview-04-17";
 export const GEMINI_API_MODEL_IMAGE = "imagen-3.0-generate-002"; // Though not used in this version
 
 export const APP_NAME = "Vib-Test";
@@ -17,15 +17,14 @@ export const DEFAULT_EXAM_CONFIG = {
 export const TRIAL_QUESTION_COUNT = 20;
 export const TRIAL_EXAM_DURATION_MINUTES = 30; // Example duration for 20 questions
 
-// ADMIN CREDENTIALS - CORREGIDO PARA COINCIDIR CON EL BACKEND
 export const ADMIN_USERNAME = 'admin';
-export const ADMIN_PASSWORD = '1234'; // CAMBIADO DE '123456789' A '1234'
+export const ADMIN_PASSWORD = '123456789';
 
 // IMPORTANT: BREVO_API_KEY should ideally be handled by a backend service in production
 // and not exposed in client-side code. This is for demonstration purposes only.
-// Commented out since we now use Firebase secrets for security
-// export const BREVO_API_KEY = "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";
+export const BREVO_API_KEY = "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";
 export const BREVO_API_URL_CONTACTS = "https://api.brevo.com/v3/contacts";
+
 
 // Placeholder for formulas - ideally this would be more extensive and categorized
 export const COMMON_FORMULAS = [
@@ -83,13 +82,9 @@ export const ALL_TOPICS_BY_CATEGORY = {
   [ExamCategory.CAT_III]: TOPICS_CAT_III,
   [ExamCategory.CAT_IV]: TOPICS_CAT_IV,
 };
-
 // Nuevos endpoints para verificación de email
 export const BREVO_PROXY_VERIFICATION_ENDPOINT = 'https://us-central1-vib-test-d5aec.cloudfunctions.net/api/brevo-proxy/register-with-verification';
 export const BREVO_PROXY_VERIFY_ENDPOINT = 'https://us-central1-vib-test-d5aec.cloudfunctions.net/api/brevo-proxy/verify-email';
 
-// ID de plantilla de Brevo - Template Vib-Test verificación
-export const BREVO_VERIFICATION_TEMPLATE_ID = 7; // Template Vib-Test verificación
-
-// Configuración de API Key para producción
-export const GOOGLE_AI_API_KEY = "AIzaSyANMFKK03msbW4luKiLsv9wa0zxLde0V2g";
+// ID de plantilla de Brevo - REEMPLAZA CON EL ID REAL DE TU PLANTILLA
+export const BREVO_VERIFICATION_TEMPLATE_ID = 3; // CAMBIAR POR EL ID REAL

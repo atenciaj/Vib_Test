@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "vib-test-d5aec"
-  }
+    "default": "vib-test-d5aec",
+    "jaga": "vib-test-d5aec"
+  },
+  "targets": {},
+  "etags": {}
 }

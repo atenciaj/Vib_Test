@@ -1,4 +1,3 @@
-import { GOOGLE_AI_API_KEY } from "../constants";
 
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { CaseStudyData } from '../types';
@@ -8,7 +7,7 @@ const getApiKey = (): string | undefined => {
   // Try localStorage first, then environment variable
   const storedKey = localStorage.getItem('GEMINI_API_KEY');
   if (storedKey) return storedKey;
-  return GOOGLE_AI_API_KEY;
+  return process.env.API_KEY;
 };
 
 

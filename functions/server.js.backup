@@ -212,14 +212,8 @@ app.post("/brevo-proxy/register-with-verification", async (req, res) => {
   }
 });
 
-// ENDPOINT VERIFICACIÓN - ACTUALIZADO PARA REGISTRAR EN BREVO
+// Endpoint para verificar el token y completar el registro
 app.post("/brevo-proxy/verify-email", async (req, res) => {
-  const BREVO_API_KEY = process.env.BREVO_API_KEY;
-  
-  if (!BREVO_API_KEY) {
-    return res.status(500).json({message: "Error de configuración del servidor"});
-  }
-
   const { token } = req.body;
   
   if (!token) {
@@ -230,52 +224,22 @@ app.post("/brevo-proxy/verify-email", async (req, res) => {
   }
 
   try {
+    // Aquí deberías verificar el token contra tu base de datos
+    // Por ahora, simplemente respondemos que la verificación fue exitosa
+    // En una implementación real, aquí registrarías al usuario en Brevo como contacto
+    
     console.log("Token de verificación recibido:", token);
     
-    // TODO: Buscar usuario pendiente por token en localStorage temporal
-    // Por ahora, simulamos encontrar un usuario para completar el flujo
-    console.log("Registrando usuario verificado en Brevo...");
+    // TODO: Implementar lógica real de verificación
+    // 1. Buscar usuario pendiente por token
+    // 2. Verificar que no haya expirado
+    // 3. Registrar contacto en Brevo
+    // 4. Marcar como verificado
     
-    // Simular datos del usuario (en producción vendría del token lookup)
-    const userData = {
-      email: "user@example.com", // Este vendría del token
-      attributes: {
-        FIRSTNAME: "Usuario",
-        LASTNAME: "Verificado",
-        USERNAME: "user123", 
-        PASSWORD: "1234",
-        COUNTRY: "Colombia",
-        EMAIL_VERIFIED: "true",
-        CAN_LOGIN: "true",
-        USER_TYPE: "user"
-      }
-    };
-
-    // Registrar usuario completo en Brevo
-    const brevoResponse = await axios.post(
-      BREVO_API_URL_CONTACTS,
-      userData,
-      {
-        headers: {
-          "accept": "application/json",
-          "api-key": BREVO_API_KEY,
-          "content-type": "application/json",
-        },
-      }
-    );
-
-    if (brevoResponse.status === 201 || brevoResponse.status === 204) {
-      console.log("Usuario registrado en Brevo después de verificación:", brevoResponse.data);
-      res.status(200).json({
-        message: "Email verificado exitosamente y usuario registrado",
-        verified: true
-      });
-    } else {
-      console.warn("Error registrando usuario en Brevo:", brevoResponse.status);
-      res.status(500).json({
-        message: "Error completando el registro"
-      });
-    }
+    res.status(200).json({
+      message: "Email verificado exitosamente",
+      verified: true
+    });
     
   } catch (err) {
     console.error("Error verificando email:", err);
@@ -286,22 +250,21 @@ app.post("/brevo-proxy/verify-email", async (req, res) => {
   }
 });
 
-// ENDPOINT LOGIN - ACTUALIZADO PARA BUSCAR POR EMAIL EN BREVO
+// NUEVO ENDPOINT DE LOGIN - CON PASSWORD NUMÉRICO
 app.post("/brevo-proxy/login", async (req, res) => {
-  const BREVO_API_KEY = process.env.BREVO_API_KEY;
-  const { email, password } = req.body; // CAMBIADO: ahora usa email en lugar de username
+  const { username, password } = req.body;
   
-  console.log("Intento de login recibido:", { email, password: "****" });
+  console.log("Intento de login recibido:", { username, password: "****" });
   
-  if (!email || !password) {
+  if (!username || !password) {
     return res.status(400).json({
       success: false,
-      message: "Email y password son requeridos"
+      message: "Username y password son requeridos"
     });
   }
 
-  // Admin login - mantener compatibilidad con username
-  if (email === "admin" && password === "1234") {
+  // Admin login con password predefinido
+  if (username === "admin" && password === "1234") {
     console.log("Login admin exitoso");
     return res.status(200).json({
       success: true,
@@ -319,94 +282,19 @@ app.post("/brevo-proxy/login", async (req, res) => {
     console.log("Password inválido - debe ser numérico de 4 dígitos mínimo");
     return res.status(401).json({
       success: false,
-      message: "Invalid email or password"
+      message: "Invalid username or password"
     });
   }
 
-  // Buscar usuario en Brevo por email
-  try {
-    console.log("Buscando usuario en Brevo por email:", email);
-    
-    // Obtener contacto de Brevo por email
-    const brevoResponse = await axios.get(
-      `${BREVO_API_URL_CONTACTS}/${encodeURIComponent(email)}`,
-      {
-        headers: {
-          "accept": "application/json",
-          "api-key": BREVO_API_KEY,
-        },
-      }
-    );
-
-    if (brevoResponse.status === 200) {
-      const contact = brevoResponse.data;
-      console.log("Usuario encontrado en Brevo:", contact.email);
-      
-      // Verificar que puede hacer login
-      if (contact.attributes.CAN_LOGIN !== "true") {
-        console.log("Usuario no tiene permisos de login");
-        return res.status(401).json({
-          success: false,
-          message: "Invalid email or password"
-        });
-      }
-
-      // Verificar email verificado
-      if (contact.attributes.EMAIL_VERIFIED !== "true") {
-        console.log("Email no verificado");
-        return res.status(401).json({
-          success: false,
-          message: "Email not verified"
-        });
-      }
-
-      // Verificar password
-      if (contact.attributes.PASSWORD !== password) {
-        console.log("Password incorrecto");
-        return res.status(401).json({
-          success: false,
-          message: "Invalid email or password"
-        });
-      }
-
-      // Login exitoso
-      console.log("Login exitoso para usuario:", contact.email);
-      return res.status(200).json({
-        success: true,
-        user: {
-          id: contact.id || contact.email,
-          username: contact.attributes.USERNAME || contact.email,
-          name: `${contact.attributes.FIRSTNAME} ${contact.attributes.LASTNAME || ''}`.trim(),
-          email: contact.email,
-          userType: contact.attributes.USER_TYPE || "user"
-        }
-      });
-
-    } else {
-      console.log("Usuario no encontrado en Brevo");
-      return res.status(401).json({
-        success: false,
-        message: "Invalid email or password"
-      });
-    }
-    
-  } catch (err) {
-    console.error("Error consultando Brevo:", err);
-    
-    // Si el error es 404, el usuario no existe
-    if (err.response && err.response.status === 404) {
-      console.log("Usuario no encontrado (404)");
-      return res.status(401).json({
-        success: false,
-        message: "Invalid email or password"
-      });
-    }
-    
-    return res.status(500).json({
-      success: false,
-      message: "Error interno del servidor"
-    });
-  }
+  // Login para usuarios registrados - por ahora respuesta temporal
+  console.log("Intento de login de usuario:", { username, password });
+  
+  // TODO: Aquí implementar lógica real de verificación contra base de datos
+  // Por ahora, respuesta temporal para testing
+  return res.status(401).json({
+    success: false,
+    message: "Invalid username or password"
+  });
 });
 
 module.exports = app;

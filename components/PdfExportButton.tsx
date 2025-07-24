@@ -135,7 +135,6 @@ export const PdfExportButton: React.FC<PdfExportButtonProps> = ({
         <ul className="text-left space-y-1">
           <li>• Análisis detallado con IA de cada pregunta</li>
           <li>• Información técnica complementaria</li>
-          <li>• Recomendaciones personalizadas de estudio</li>
           <li>• Formato profesional tipo presentación universitaria</li>
         </ul>
       </div>

@@ -1,12 +1,11 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { User as UserIcon, Lock, LogIn } from 'lucide-react'; // Changed to UserIcon to avoid conflict
+import { Mail, Lock, LogIn } from 'lucide-react'; // CAMBIADO: Mail en lugar de UserIcon
 import { LoadingSpinner } from '../../components/LoadingSpinner';
 
 export const LoginPage: React.FC = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState(''); // CAMBIADO: email en lugar de username
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -18,16 +17,16 @@ export const LoginPage: React.FC = () => {
     setError(null);
     setIsLoading(true);
     try {
-      const success = await login(username, password);
+      const success = await login(email, password); // CAMBIADO: email en lugar de username
       if (success) {
         // Check if admin to redirect appropriately
-        if (username === 'admin') { // Simple check, AuthContext handles actual admin logic
+        if (email === 'admin') { // CAMBIADO: email en lugar de username
             navigate('/admin/dashboard');
         } else {
             navigate('/');
         }
       } else {
-        setError('Invalid username or password.');
+        setError('Invalid email or password.'); // CAMBIADO: mensaje de error
       }
     } catch (err) {
       setError('An unexpected error occurred. Please try again.');
@@ -41,7 +40,6 @@ export const LoginPage: React.FC = () => {
   const darkInputClasses = `${inputBaseClasses} bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400`;
   const darkInputWithIconClasses = `${darkInputClasses} pl-10 pr-3`;
 
-
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-200px)] bg-background">
       <div className="w-full max-w-md p-8 space-y-8 bg-card rounded-xl shadow-2xl">
@@ -50,23 +48,23 @@ export const LoginPage: React.FC = () => {
         </div>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="username" className="block text-sm font-medium text-textSecondary mb-1">
-              Username
+            <label htmlFor="email" className="block text-sm font-medium text-textSecondary mb-1">
+              Email or Admin {/* CAMBIADO: Clarificar que acepta admin también */}
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <UserIcon className="h-5 w-5 text-gray-400" />
+                <Mail className="h-5 w-5 text-gray-400" /> {/* CAMBIADO: Mail icon */}
               </div>
               <input
-                id="username"
-                name="username"
-                type="text"
-                autoComplete="username"
+                id="email" /* CAMBIADO: id */
+                name="email" /* CAMBIADO: name */
+                type="text" /* CORREGIDO: text en lugar de email para permitir "admin" */
+                autoComplete="email" /* CAMBIADO: autoComplete */
                 required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email} /* CAMBIADO: value */
+                onChange={(e) => setEmail(e.target.value)} /* CAMBIADO: onChange */
                 className={darkInputWithIconClasses}
-                placeholder="Enter your username"
+                placeholder="Enter your email or admin" /* CAMBIADO: placeholder más claro */
               />
             </div>
           </div>

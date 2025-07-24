@@ -8,7 +8,7 @@ import { BREVO_PROXY_VERIFICATION_ENDPOINT } from '../constants';
 
 interface AuthContextType {
   currentUser: AuthUser | null;
-  login: (usernameInput: string, passwordInput: string) => Promise<boolean>;
+  login: (emailInput: string, passwordInput: string) => Promise<boolean>; // CAMBIADO: emailInput en lugar de usernameInput
   register: (userData: Omit<User, 'id' | 'registrationDate' | 'password'> & {password?: string}) => Promise<boolean>; // Password becomes optional for Brevo
   logout: () => void;
   isAuthenticated: () => boolean;
@@ -24,7 +24,7 @@ const USERS_STORAGE_KEY = 'vibTestRegisteredUsers';
 // IMPORTANT: In a production environment, this URL should be read from environment variables
 // or a configuration file, not hardcoded. For local development, this is fine.
 // MODIFICADO: Apunta a la URL de la función de Firebase desplegada
-const BREVO_PROXY_REGISTER_ENDPOINT = 'https://us-central1-vib-test-d5aec.cloudfunctions.net/api/brevo-proxy/register-contact'; // Reemplaza con la URL real de tu función si es diferente
+const BREVO_PROXY_REGISTER_ENDPOINT = 'https://us-central1-vib-test-d5aec.cloudfunctions.net/api/brevo-proxy/register-with-verification'; // Reemplaza con la URL real de tu función si es diferente
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
@@ -45,19 +45,53 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setLoading(false);
   }, []);
 
-  const login = useCallback(async (usernameInput: string, passwordInput: string): Promise<boolean> => {
-    if (usernameInput === ADMIN_USERNAME && passwordInput === ADMIN_PASSWORD) {
+  // FUNCIÓN LOGIN MODIFICADA - AHORA ENVÍA EMAIL AL BACKEND
+  const login = useCallback(async (emailInput: string, passwordInput: string): Promise<boolean> => {
+    // Admin login (mantener como está)
+    if (emailInput === ADMIN_USERNAME && passwordInput === ADMIN_PASSWORD) {
       const adminUser: AuthUser = { id: 'admin_id', username: ADMIN_USERNAME, name: 'Admin', userType: 'admin' };
       setCurrentUser(adminUser);
       localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(adminUser));
       return true;
     }
 
-    // This part will only work for users registered with the old localStorage method.
-    // New users registered via Brevo won't be found here for login.
+    // NUEVO: Llamar al backend para login de usuarios
+    try {
+      console.log('Intentando login en backend...');
+      const response = await fetch('https://us-central1-vib-test-d5aec.cloudfunctions.net/api/brevo-proxy/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          email: emailInput,  // CAMBIADO: email en lugar de username
+          password: passwordInput 
+        }),
+      });
+
+      const data = await response.json();
+      console.log('Respuesta del backend:', data);
+
+      if (data.success && data.user) {
+        const authUser: AuthUser = {
+          id: data.user.id,
+          username: data.user.username,
+          name: data.user.name,
+          userType: data.user.userType
+        };
+        setCurrentUser(authUser);
+        localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(authUser));
+        return true;
+      }
+    } catch (error) {
+      console.error('Error during backend login:', error);
+    }
+
+    // Fallback: buscar en localStorage (usuarios viejos) - mantener compatibilidad con username
+    console.log('Probando login con localStorage...');
     const storedUsers = JSON.parse(localStorage.getItem(USERS_STORAGE_KEY) || '[]') as User[];
     const foundUser = storedUsers.find(
-      (user) => user.username === usernameInput && user.password === passwordInput
+      (user) => (user.username === emailInput || user.email === emailInput) && user.password === passwordInput // CAMBIADO: buscar por username O email
     );
 
     if (foundUser) {
@@ -66,6 +100,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(authUser));
       return true;
     }
+
+    console.log('Login fallido en todos los métodos');
     return false;
   }, []);
 
@@ -144,7 +180,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const isAuthenticated = useCallback((): boolean => {
     return !!currentUser;
   }, [currentUser]);
-
 
   if (loading) {
     return <div className="flex justify-center items-center min-h-screen"><p>Loading authentication...</p></div>;

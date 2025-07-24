@@ -1,4 +1,3 @@
-import { GOOGLE_AI_API_KEY } from "../constants";
 // services/aiAnalysisService.ts
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { GEMINI_API_MODEL_TEXT } from '../constants';
@@ -15,7 +14,7 @@ interface QuestionAnalysisData {
 // NUEVA FUNCIÓN: Verificar si la API Key está configurada
 export const checkApiKeyConfiguration = (): boolean => {
   const localStorageKey = localStorage.getItem('GEMINI_API_KEY');
-  const envKey = GOOGLE_AI_API_KEY;
+  const envKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
   
   return !!(localStorageKey || envKey);
 };
@@ -24,7 +23,7 @@ const getApiKey = (): string => {
   const storedKey = localStorage.getItem('GEMINI_API_KEY');
   if (storedKey) return storedKey;
   
-  const envKey = GOOGLE_AI_API_KEY;
+  const envKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
   if (envKey) return envKey;
   
   throw new Error("API Key de Gemini no configurada. Configure en Settings.");
@@ -42,24 +41,32 @@ export const generateTechnicalAnalysis = async (
     const ai = getAiClient();
     const model = ai.getGenerativeModel({ model: GEMINI_API_MODEL_TEXT });
 
-    const prompt = `Eres un ingeniero experto en vibraciones. Analiza esta pregunta de certificación ISO 18436-2:
+    const prompt = `
+Como experto certificado en análisis de vibraciones según ISO 18436-2, genera un análisis técnico detallado para esta pregunta de examen ${questionData.category}:
 
-PREGUNTA: ${questionData.question}
+**PREGUNTA:** ${questionData.question}
 
-OPCIONES:
-${questionData.options.map((option, index) => `${String.fromCharCode(65 + index)}. ${option}`).join(n)}
+**OPCIONES:**
+${questionData.options.map((option, index) => `${String.fromCharCode(65 + index)}. ${option}`).join('\n')}
 
-RESPUESTA CORRECTA: ${String.fromCharCode(65 + questionData.correctIndex)}
+**RESPUESTA CORRECTA:** ${String.fromCharCode(65 + questionData.correctIndex)} - ${questionData.correctAnswer}
 
-INSTRUCCIONES:
-- Explica en 2-3 oraciones POR QUÉ la respuesta correcta es técnicamente válida
-- Explica en 1 oración por qué CADA opción incorrecta es errónea
-- Usa terminología técnica específica, NO referencias genéricas a normas
-- Máximo 150 palabras total
-- Formato: párrafos cortos, sin listas numeradas
+**ÁREA DE CONOCIMIENTO:** ${questionData.topic}
 
-Ejemplo de respuesta esperada:
-"La opción B es correcta porque en termografía las mediciones relativas eliminan variables ambientales y detectan anomalías por comparación. La opción A falla porque la precisión absoluta requiere calibración costosa. La opción C es incorrecta ya que la temperatura es fundamental para detectar fricción, cojinetes defectuosos y sobrecargas eléctricas."`;
+**INSTRUCCIONES:**
+Proporciona un análisis técnico estructurado que incluya:
+
+1. **Fundamento Técnico ISO 18436-2:** Base teórica según la norma
+2. **Por qué es Correcta:** Explicación de la respuesta correcta
+3. **Análisis de Opciones Incorrectas:** Por qué las otras opciones son erróneas
+4. **Aplicación Práctica:** Cómo se aplica en el campo real
+5. **Conceptos Clave:** Términos y principios importantes para recordar
+
+**FORMATO:** Texto claro y técnico, máximo 400 palabras.
+**AUDIENCIA:** Analistas de vibraciones Category I preparándose para certificación.
+
+Responde SOLO con el análisis técnico, sin encabezados adicionales.
+`;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
